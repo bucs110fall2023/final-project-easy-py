@@ -12,7 +12,7 @@ Chuma Ogwulumba, Joshua Medina
 
 ## Project Description
 
- The project is an rpg adventure where you fight bosses at least, interact with people, and has a story and conclusion with save data so you can start off where you left off.  
+An rpg with stats attack option and a modicum of plot
 
 ***    
 
