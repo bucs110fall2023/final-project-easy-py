@@ -6,13 +6,13 @@
 
 ## Team Members
 
-<< List team member names >>
+Chuma Ogwulumba, 
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+An rpg with stats attack option and a modicum of plot
 
 ***    
 
