@@ -6,7 +6,7 @@
 
 ## Team Members
 
-Chuma Ogwulumba, I AM ENRAGED!!!
+Chuma Ogwulumba, 
 
 ***
 
