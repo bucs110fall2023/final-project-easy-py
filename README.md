@@ -12,7 +12,7 @@ Chuma Ogwulumba, Joshua Medina
 
 ## Project Description
 
-An rpg with stats attack option and a modicum of plot
+An rpg with stats attack options, and a modicum of plot
 
 ***    
 
@@ -32,8 +32,8 @@ An rpg with stats attack option and a modicum of plot
 
 1.  moveable character 
 2.  boss battles  
-3. << Feature 3 >>
-4. << Feature 4 >>
+3.  scrolling text
+4.  in battle narration
 5.  save data 
 
 ### Classes
