@@ -1,14 +1,35 @@
 {
     "save 1": {
-        "Unit Stats": {},
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defence": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0
+            }
+        },
         "Progress": []
     },
     "save 2": {
-        "Unit Stats": {},
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defence": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0
+            }
+        },
         "Progress": []
     },
     "save 3": {
-        "Unit Stats": {},
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defence": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0
+            }
+        },
         "Progress": []
     }
 }
