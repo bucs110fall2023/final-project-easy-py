@@ -9,3 +9,9 @@ class Unit:
             self.ackt = stats[str(save)][str(name)]["Attack"]
             self.max_hp = stats[str(save)][str(name)]["Maximum Health Points"]
             self.max_mp = stats[str(save)][str(name)]["Maximum Magic Points"]
+
+class Enemy(Unit):
+    pass
+
+class Hero(Unit):
+    pass
