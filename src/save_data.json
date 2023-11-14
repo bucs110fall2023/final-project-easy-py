@@ -5,7 +5,8 @@
                 "Attack": 0,
                 "Defence": 0,
                 "Maximum Health Points": 0,
-                "Maximum Magic Points": 0
+                "Maximum Magic Points": 0,
+                "Exp": {}
             }
         },
         "Progress": []
@@ -16,7 +17,8 @@
                 "Attack": 0,
                 "Defence": 0,
                 "Maximum Health Points": 0,
-                "Maximum Magic Points": 0
+                "Maximum Magic Points": 0,
+                "Exp": {}
             }
         },
         "Progress": []
@@ -27,7 +29,8 @@
                 "Attack": 0,
                 "Defence": 0,
                 "Maximum Health Points": 0,
-                "Maximum Magic Points": 0
+                "Maximum Magic Points": 0,
+                "Exp": {}
             }
         },
         "Progress": []
