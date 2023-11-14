@@ -18,7 +18,12 @@ class Unit:
             self.mp = self.max_mp
 
     def attack(self, opponent):
-        opponent.hp = opponent.hp - self.ackt
+        damage = self.ackt - opponent.defn
+        if opponent.defn > self.ackt:
+            return "No Sell"
+        else:
+            opponent.hp = opponent.hp - (self.ackt - opponent.defn)
+            return {"Opponent": opponent.name, "Enemy Damage": damage}
 
 
 class Enemy(Unit):
