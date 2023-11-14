@@ -19,7 +19,7 @@ class Unit:
 
     def attack(self, opponent):
         damage = self.ackt - opponent.defn
-        if damage > 0:
+        if damage <= 0:
             return "No Sell"
         else:
             opponent.hp = opponent.hp - damage
