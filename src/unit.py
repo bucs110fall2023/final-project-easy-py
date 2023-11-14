@@ -22,7 +22,7 @@ class Unit:
         if damage > 0:
             return "No Sell"
         else:
-            opponent.hp = opponent.hp - (self.ackt - opponent.defn)
+            opponent.hp = opponent.hp - damage
             return {"Opponent": opponent.name, "Enemy Damage": damage}
 
 
