@@ -5,6 +5,8 @@ class Unit:
 
     def __init__(self, save, name):
         with open("save_data.json") as stats:
+
+            #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
             json.load(stats)
             self.ackt = stats[str(save)][str(name)]["Attack"]
             self.defn = stats[str(save)][str(name)]["Defence"]
