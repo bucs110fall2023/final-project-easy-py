@@ -3,10 +3,17 @@
         "Unit Stats": {
             "Merant": {
                 "Attack": 0,
-                "Defence": 0,
+                "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
                 "Experience Points": {}
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0
             }
         },
         "Progress": []
@@ -15,10 +22,17 @@
         "Unit Stats": {
             "Merant": {
                 "Attack": 0,
-                "Defence": 0,
+                "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
                 "Experience Points": {}
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0
             }
         },
         "Progress": []
@@ -27,10 +41,17 @@
         "Unit Stats": {
             "Merant": {
                 "Attack": 0,
-                "Defence": 0,
+                "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
                 "Experience Points": {}
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0
             }
         },
         "Progress": []
