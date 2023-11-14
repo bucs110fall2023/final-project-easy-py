@@ -17,6 +17,8 @@ class Unit:
             self.hp = self.max_hp
             self.mp = self.max_mp
 
+    def attack(self, opponent):
+        opponent.hp = opponent.hp - self.ackt
 
 
 class Enemy(Unit):
