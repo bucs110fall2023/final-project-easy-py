@@ -6,7 +6,7 @@
                 "Defence": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Exp": {}
+                "Experience Points": {}
             }
         },
         "Progress": []
@@ -18,7 +18,7 @@
                 "Defence": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Exp": {}
+                "Experience Points": {}
             }
         },
         "Progress": []
@@ -30,7 +30,7 @@
                 "Defence": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Exp": {}
+                "Experience Points": {}
             }
         },
         "Progress": []

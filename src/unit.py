@@ -25,5 +25,6 @@ class Enemy(Unit):
 
 class Hero(Unit):
     def __init__(self, save, name):
-        super().__init__(save, name)
-        
+        with open("save_data.json") as stats:
+            super().__init__(save, name)
+            self.exp = stats[str(save)][str(name)]["Experience Points"]
