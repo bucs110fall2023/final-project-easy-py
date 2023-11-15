@@ -4,6 +4,11 @@ import json
 class Unit:
 
     def __init__(self, save, name):
+        """
+        Initializes the object for the rpg unit as well as takes properties found in the JSON file
+        args: self, save, name
+        return: None
+        """
         with open("assets/save_data.json") as stats:
 
             #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
@@ -19,6 +24,11 @@ class Unit:
             self.name = name
 
     def attack(self, opponent):
+        """
+        The rpg unit attacks the opponent using the attack stat
+        args: self, opponent
+        return: dictionary
+        """
         damage = self.ackt - opponent.defn
         if damage <= 0:
             return "No Sell"
@@ -29,12 +39,22 @@ class Unit:
 
 class Enemy(Unit):
     def __init__(self, save, name):
+        """
+        Inherits from the Unit class as well as having a value for experience
+        args: self, save, name
+        returns: None
+        """
         with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[str(save)]["Unit Stats"][str(name)]["Experience Value"]
 
     def win(self):
+        """
+        Checks if the player wins
+        args: self
+        returns: boolean
+        """
         if self.hp <= 0:
             return True
         else:
@@ -43,6 +63,11 @@ class Enemy(Unit):
 
 class Hero(Unit):
     def __init__(self, save, name):
+        """
+        Inherits from the Unit class as well as accepting Exp points, Current exp, and Current Level
+        args: self, save, name
+        returns: None
+        """
         with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
@@ -51,15 +76,30 @@ class Hero(Unit):
             self.curr_lvl = stat[str(save)]["Unit Stats"][str(name)]["Current Level"]
 
     def lose(self):
+        """
+        Checks if the player loses
+        args: self
+        returns: boolean
+        """  
         if self.hp <= 0:
             return True
         else:
             return False
     
     def exp_gain(self, opponent):
+        """
+        Keep tract of exp gain
+        args: self, opponent
+        return: None
+        """
         self.exp =+ opponent.exp_val
 
     def level_up(self):
+        """
+        Provides the sequence for the player character leveling up
+        args: self
+        returns: dictionary
+        """
         for i in self.exp_pnts:
             if self.curr_lvl < self.exp_pnts.keys()[i] and self.exp > self.exp_pnts[i]:
                 self.curr_lvl += 1
