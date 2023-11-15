@@ -11,11 +11,12 @@ class Unit:
             stat = json.load(stats)
             self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
             self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
-            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
             self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
             self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
+            self.save = save
+            self.name = name
 
     def attack(self, opponent):
         damage = self.ackt - opponent.defn
@@ -47,6 +48,7 @@ class Hero(Unit):
             stat = json.load(stats)
             self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
             self.exp = stat[str(save)]["Unit Stats"][str(name)]["Current Experience"]
+            self.curr_lvl = 0
 
     def lose(self):
         if self.hp <= 0:
@@ -58,4 +60,17 @@ class Hero(Unit):
         self.exp =+ opponent.exp_val
 
     def level_up(self):
-        pass
+        for i in self.exp_pnts:
+            if self.curr_lvl < self.exp_pnts.keys()[i] and self.exp > self.exp_pnts[i]:
+                ackt_inc = range(1, 4)
+                hp_inc = range(1, 4)
+                defe_inc = range(1, 4)
+                mp_inc = range(1, 4)
+                with open("save_data.json", "w") as updated_txt:
+                    update = json.load(updated_txt)
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
+                    json.dump(update, updated_txt, indent=4)
+
