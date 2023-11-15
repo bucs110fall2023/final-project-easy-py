@@ -38,11 +38,13 @@ class Enemy(Unit):
         else:
             return False
 
+
 class Hero(Unit):
     def __init__(self, save, name):
         with open("save_data.json") as stats:
             super().__init__(save, name)
             self.exp = stats[str(save)]["Unit Stats"][str(name)]["Experience Points"]
+            self.exp = stats[str(save)]["Unit Stats"][str(name)]["Current Experience"]
 
     def lose(self):
         if self.hp <= 0:

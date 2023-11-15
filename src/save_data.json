@@ -6,7 +6,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Points": {}
+                "Experience Points": {},
+                "Current Experience": 0
             },
             "(Enemy)PH": {
                 "Attack": 0,
@@ -25,7 +26,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Points": {}
+                "Experience Points": {},
+                "Current Experience": 0
             },
             "(Enemy)PH": {
                 "Attack": 0,
@@ -44,7 +46,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Points": {}
+                "Experience Points": {},
+                "Current Experience": 0
             },
             "(Enemy)PH": {
                 "Attack": 0,
