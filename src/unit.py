@@ -8,12 +8,12 @@ class Unit:
 
             #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
             # if I understand what you're saying, then yeah
-            json.load(stats)
-            self.ackt = stats[str(save)]["Unit Stats"][str(name)]["Attack"]
-            self.defn = stats[str(save)]["Unit Stats"][str(name)]["Defense"]
-            self.ackt = stats[str(save)]["Unit Stats"][str(name)]["Attack"]
-            self.max_hp = stats[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
-            self.max_mp = stats[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
+            stat = json.load(stats)
+            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
+            self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
+            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
+            self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
+            self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
 
@@ -30,7 +30,8 @@ class Enemy(Unit):
     def __init__(self, save, name):
         with open("save_data.json") as stats:
             super().__init__(save, name)
-            self.exp_val = stats[str(save)]["Unit Stats"][str(name)]["Experience Value"]
+            stat = json.load(stats)
+            self.exp_val = stat[str(save)]["Unit Stats"][str(name)]["Experience Value"]
 
     def win(self):
         if self.hp <= 0:
@@ -43,8 +44,9 @@ class Hero(Unit):
     def __init__(self, save, name):
         with open("save_data.json") as stats:
             super().__init__(save, name)
-            self.exp_pnts = stats[str(save)]["Unit Stats"][str(name)]["Experience Points"]
-            self.exp = stats[str(save)]["Unit Stats"][str(name)]["Current Experience"]
+            stat = json.load(stats)
+            self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
+            self.exp = stat[str(save)]["Unit Stats"][str(name)]["Current Experience"]
 
     def lose(self):
         if self.hp <= 0:
