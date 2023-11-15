@@ -48,7 +48,7 @@ class Hero(Unit):
             stat = json.load(stats)
             self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
             self.exp = stat[str(save)]["Unit Stats"][str(name)]["Current Experience"]
-            self.curr_lvl = 0
+            self.curr_lvl = stat[str(save)]["Unit Stats"][str(name)]["Current Level"]
 
     def lose(self):
         if self.hp <= 0:
@@ -62,6 +62,7 @@ class Hero(Unit):
     def level_up(self):
         for i in self.exp_pnts:
             if self.curr_lvl < self.exp_pnts.keys()[i] and self.exp > self.exp_pnts[i]:
+                self.curr_lvl += 1
                 ackt_inc = range(1, 4)
                 hp_inc = range(1, 4)
                 defe_inc = range(1, 4)
@@ -72,5 +73,6 @@ class Hero(Unit):
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
 
