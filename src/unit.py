@@ -24,7 +24,7 @@ class Unit:
             return "No Sell"
         else:
             opponent.hp = opponent.hp - damage
-            return {"Opponent": opponent.name, "Enemy Damage": damage}
+            return {"Opponent": opponent.name, "Enemy Damage": str(damage)}
 
 
 class Enemy(Unit):
@@ -75,4 +75,5 @@ class Hero(Unit):
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
+        return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
