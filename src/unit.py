@@ -4,7 +4,7 @@ import json
 class Unit:
 
     def __init__(self, save, name):
-        with open("save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
 
             #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
             # if I understand what you're saying, then yeah
@@ -29,7 +29,7 @@ class Unit:
 
 class Enemy(Unit):
     def __init__(self, save, name):
-        with open("save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[str(save)]["Unit Stats"][str(name)]["Experience Value"]
@@ -43,7 +43,7 @@ class Enemy(Unit):
 
 class Hero(Unit):
     def __init__(self, save, name):
-        with open("save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
@@ -67,7 +67,7 @@ class Hero(Unit):
                 hp_inc = range(1, 4)
                 defe_inc = range(1, 4)
                 mp_inc = range(1, 4)
-                with open("save_data.json", "w") as updated_txt:
+                with open("assets/save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
