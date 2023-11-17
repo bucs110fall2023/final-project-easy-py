@@ -9,15 +9,13 @@ class Unit:
         args: self, save, name
         return: None
         """
-        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
 
-            #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
-            # if I understand what you're saying, then yeah
             stat = json.load(stats)
-            self.ackt = stat[save]["Unit Stats"][name]["Attack"]
-            self.defn = stat[save]["Unit Stats"][name]["Defense"]
-            self.max_hp = stat[save]["Unit Stats"][name]["Maximum Health Points"]
-            self.max_mp = stat[save]["Unit Stats"][name]["Maximum Magic Points"]
+            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
+            self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
+            self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
+            self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
             self.save = save
@@ -31,10 +29,10 @@ class Unit:
         """
         damage = self.ackt - opponent.defn
         if damage <= 0:
-            return {"Opponent": opponent.name, "Lack of Damage": "No sell"}
+            return "No Sell"
         else:
             opponent.hp = opponent.hp - damage
-            return {"Opponent": opponent.name, "Enemy Damage": str(damage)}
+            return {"Opponent": opponent.name, "Enemy Damage": damage}
 
 
 class Enemy(Unit):
@@ -109,11 +107,11 @@ class Hero(Unit):
                 mp_inc = range(1, 4)
                 with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
-                    update[self.save]["Unit Stats"][self.name]["Attack"] += ackt_inc
-                    update[self.save]["Unit Stats"][self.name]["Defense"] += defe_inc
-                    update[self.save]["Unit Stats"][self.name]["Maximum Health Points"] += hp_inc
-                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] += mp_inc
-                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] = self.curr_lvl
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
+                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
