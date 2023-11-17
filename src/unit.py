@@ -12,10 +12,10 @@ class Unit:
         with open(self.f) as stats:
 
             stat = json.load(stats)
-            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
-            self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
-            self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
-            self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
+            self.ackt = stat[save]["Unit Stats"][name]["Attack"]
+            self.defn = stat[save]["Unit Stats"][name]["Defense"]
+            self.max_hp = stat[save]["Unit Stats"][name]["Maximum Health Points"]
+            self.max_mp = stat[save]["Unit Stats"][name]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
             self.save = save
