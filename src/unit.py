@@ -9,7 +9,7 @@ class Unit:
         args: self, save, name
         return: None
         """
-        with open("assets/save_data.json") as stats:
+        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
 
             #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
             # if I understand what you're saying, then yeah
@@ -44,7 +44,7 @@ class Enemy(Unit):
         args: self, save, name
         returns: None
         """
-        with open("assets/save_data.json") as stats:
+        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[str(save)]["Unit Stats"][str(name)]["Experience Value"]
@@ -68,7 +68,7 @@ class Hero(Unit):
         args: self, save, name
         returns: None
         """
-        with open("assets/save_data.json") as stats:
+        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
@@ -107,7 +107,7 @@ class Hero(Unit):
                 hp_inc = range(1, 4)
                 defe_inc = range(1, 4)
                 mp_inc = range(1, 4)
-                with open("assets/save_data.json", "w") as updated_txt:
+                with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
@@ -117,3 +117,5 @@ class Hero(Unit):
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
+merant = Hero("save 1", "Merant")
+print(merant.__dict__)
