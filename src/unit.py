@@ -9,15 +9,20 @@ class Unit:
         args: self, save, name
         return: None
         """
+
+
+        #Makes sure args passed into the class are valid, just to prevent any errors 
+        if(["save_1", "save_2", "save_3"].count(save) == 0): raise KeyError("save file not found")
+        if(["Merant", "(Enemy)PH"].count(name) == 0): raise KeyError("name not found")
+
         with open("assets/save_data.json") as stats:
 
-            #r we using the json as a memory to load previous data through a username? I feel like that would be the best way to store it 
-            # if I understand what you're saying, then yeah
             stat = json.load(stats)
-            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
-            self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
-            self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
-            self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
+            
+            self.ackt = stat[save]["Unit Stats"][name]["Attack"]
+            self.defn = stat[save]["Unit Stats"][name]["Defense"]
+            self.max_hp = stat[save]["Unit Stats"][name]["Maximum Health Points"]
+            self.max_mp = stat[save]["Unit Stats"][name]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
             self.save = save
@@ -31,10 +36,10 @@ class Unit:
         """
         damage = self.ackt - opponent.defn
         if damage <= 0:
-            return "No Sell"
+            return {"Opponent": opponent.name, "Enemy Damage": 0}
         else:
             opponent.hp = opponent.hp - damage
-            return {"Opponent": opponent.name, "Enemy Damage": str(damage)}
+            return {"Opponent": opponent.name, "Enemy Damage": damage}
 
 
 class Enemy(Unit):
@@ -47,7 +52,7 @@ class Enemy(Unit):
         with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
-            self.exp_val = stat[str(save)]["Unit Stats"][str(name)]["Experience Value"]
+            self.exp_val = stat[save]["Unit Stats"][name]["Experience Value"]
 
     def win(self):
         """
@@ -71,9 +76,9 @@ class Hero(Unit):
         with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
-            self.exp_pnts = stat[str(save)]["Unit Stats"][str(name)]["Experience Points"]
-            self.exp = stat[str(save)]["Unit Stats"][str(name)]["Current Experience"]
-            self.curr_lvl = stat[str(save)]["Unit Stats"][str(name)]["Current Level"]
+            self.exp_pnts = stat[save]["Unit Stats"][name]["Experience Points"]
+            self.exp = stat[save]["Unit Stats"][name]["Current Experience"]
+            self.curr_lvl = stat[save]["Unit Stats"][name]["Current Level"]
 
     def lose(self):
         """
@@ -109,11 +114,12 @@ class Hero(Unit):
                 mp_inc = range(1, 4)
                 with open("assets/save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
+                    print(update)
+                    update[self.save]["Unit Stats"][self.name]["Attack"] += ackt_inc
+                    update[self.save]["Unit Stats"][self.name]["Defense"] += defe_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Health Points"] += hp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] += mp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
