@@ -9,13 +9,20 @@ class Unit:
         args: self, save, name
         return: None
         """
+<<<<<<< HEAD
         with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
 
+=======
+        #Makes sure args passed into the class are valid, just to prevent any errors 
+        if(["save_1", "save_2", "save_3"].count(save) == 0): raise KeyError("save file not found")
+        if(["Merant", "(Enemy)PH"].count(name) == 0): raise KeyError("name not found")
+        with open("assets/save_data.json") as stats:
+>>>>>>> cc82cfdd8e923ed5ff2bcdfef71650145497d31f
             stat = json.load(stats)
-            self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
-            self.defn = stat[str(save)]["Unit Stats"][str(name)]["Defense"]
-            self.max_hp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Health Points"]
-            self.max_mp = stat[str(save)]["Unit Stats"][str(name)]["Maximum Magic Points"]
+            self.ackt = stat[save]["Unit Stats"][name]["Attack"]
+            self.defn = stat[save]["Unit Stats"][name]["Defense"]
+            self.max_hp = stat[save]["Unit Stats"][name]["Maximum Health Points"]
+            self.max_mp = stat[save]["Unit Stats"][name]["Maximum Magic Points"]
             self.hp = self.max_hp
             self.mp = self.max_mp
             self.save = save
@@ -42,7 +49,7 @@ class Enemy(Unit):
         args: self, save, name
         returns: None
         """
-        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[save]["Unit Stats"][name]["Experience Value"]
@@ -66,7 +73,7 @@ class Hero(Unit):
         args: self, save, name
         returns: None
         """
-        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
+        with open("assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_pnts = stat[save]["Unit Stats"][name]["Experience Points"]
@@ -105,17 +112,17 @@ class Hero(Unit):
                 hp_inc = range(1, 4)
                 defe_inc = range(1, 4)
                 mp_inc = range(1, 4)
-                with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json", "w") as updated_txt:
+                with open("assets/save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
+                    update[self.save]["Unit Stats"][self.name]["Attack"] += ackt_inc
+                    update[self.save]["Unit Stats"][self.name]["Defense"] += defe_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Health Points"] += hp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] += mp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
 def expiriment():    
-    merant = Hero("save 1", "Merant")
+    merant = Hero("save_1", "Merant")
     print(merant.__dict__)
 expiriment()
