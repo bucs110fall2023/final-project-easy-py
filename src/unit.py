@@ -9,7 +9,7 @@ class Unit:
         args: self, save, name
         return: None
         """
-        with open("assets/save_data.json") as stats:
+        with open(r"C:\Users\ceogw\github-classroom\bucs110fall2023\final-project-easy-py\assets\save_data.json") as stats:
 
             stat = json.load(stats)
             self.ackt = stat[str(save)]["Unit Stats"][str(name)]["Attack"]
