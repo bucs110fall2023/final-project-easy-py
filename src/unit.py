@@ -117,5 +117,7 @@ class Hero(Unit):
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
 
-merant = Hero("save 1", "Merant")
-print(merant.__dict__)
+def expiriment():    
+    merant = Hero("save 1", "Merant")
+    print(merant.__dict__)
+expiriment()
