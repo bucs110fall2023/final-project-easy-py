@@ -1,13 +1,18 @@
-
+import pygame
+from src.unit import *
 class Controller:
 
     def __init__(self):
         # setup pygame data
-        pass
+        pygame.init()
+        self.screen = pygame.display.set_mode()
+
 
     def mainloop(self):
         # select state loop
-        pass
+        for event in pygame.event.get():
+            if event == pygame.QUIT:
+                exit()
 
       ### below are some sample loop states ###
 
