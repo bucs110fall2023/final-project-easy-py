@@ -38,7 +38,9 @@ An rpg with stats attack options, and a modicum of plot
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+- Unit: Template for the Hero and Enemy class. Holds the stats for the RPG unit and can attact another unit.
+- Hero: Inherites from Unit can accumulate Exp for a level up and when hp reaches zero a boolean is returned for a game over.
+- Enemy: Inherites from Unit and holds an Exp value and when hp reaches zero a boolean is returned for vicotry.
 
 ## ATP
 
