@@ -7,8 +7,9 @@ class BattleSeq:
         self.enemy = Enemy(save, name)
         self.enemy_name = name
 
-    def in_battle(self):
+    def in_battle(self, input):
         while not (self.merant.lose() and self.enemy.win()):
+            # if input...
             self.merant.attack(self.enemy_name)
             self.enemy.attack("Merant")
         if self.merant.lose():
