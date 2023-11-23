@@ -15,7 +15,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
             }
         },
         "Progress": []
@@ -36,7 +37,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
             }
         },
         "Progress": []
@@ -57,7 +59,8 @@
                 "Defense": 0,
                 "Maximum Health Points": 0,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
             }
         },
         "Progress": []

@@ -45,6 +45,7 @@ class Enemy(Unit):
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[save]["Unit Stats"][name]["Experience Value"]
+            self.weak_pnt = stat[save]["Unit Stats"][name]["Weakness"]
 
     def win(self):
         """
