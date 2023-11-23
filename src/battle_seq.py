@@ -9,9 +9,9 @@ class BattleSeq:
 
     def in_battle(self, input):
         while not (self.merant.lose() and self.enemy.win()):
-            # if input...
-            self.merant.attack(self.enemy_name)
-            self.enemy.attack("Merant")
+            if input == "1":
+                self.merant.attack(self.enemy_name)
+                self.enemy.attack("Merant")
         if self.merant.lose():
             pass
         elif self.enemy.win():
