@@ -114,3 +114,5 @@ class Hero(Unit):
                     update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
         return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
+ph_enemy = Enemy("Save 1", "(Enemy)PH")
+print(ph_enemy.__dict__)
