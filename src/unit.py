@@ -116,4 +116,3 @@ class Hero(Unit):
                 return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
             else:
                 return {}
-    
