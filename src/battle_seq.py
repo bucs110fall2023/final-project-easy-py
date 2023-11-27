@@ -1,4 +1,4 @@
-from unit import *
+from src.unit import *
 
 class BattleSeq:
 
