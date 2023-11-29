@@ -7,17 +7,19 @@ class Controller:
         pygame.init()
         self.screen = pygame.display.set_mode()
         self.screen_width, self.screen_length = self.screen.get_size()
+        self.state = "SELECTION"
 
 
-    def mainloop(self):
+    def main_loop(self):
         # select state loop
-        for event in pygame.event.get():
-            if event == pygame.QUIT:
-                exit()
+        while True:
+            if self.state == "SELECTION":
+                self.selectionloop()
+
 
       ### below are some sample loop states ###
 
-    def menuloop(self):
+    def selection_loop(self):
         pass
         # event loop
 
@@ -25,7 +27,7 @@ class Controller:
 
         # redraw
 
-    def gameloop(self):
+    def overworld_game_loop(self):
         pass
         # event loop
 
@@ -33,7 +35,9 @@ class Controller:
 
         # redraw
 
-    def gameoverloop(self):
+    def battle_gameloop
+    
+    def gameover_loop(self):
         pass
         # event loop
 
