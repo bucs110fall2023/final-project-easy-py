@@ -35,7 +35,8 @@ class Controller:
 
         # redraw
 
-    def battle_gameloop
+    def battle_gameloop():
+        pass
     
     def gameover_loop(self):
         pass
