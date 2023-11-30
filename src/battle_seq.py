@@ -12,7 +12,7 @@ class BattleSeq:
             if input == "1":
                 player_info = self.merant.attack(self.enemy_name)
                 enemy_info = self.enemy.attack("Merant")
-                return [player_info, enemy_info]
+                return {"Player Narration": player_info, "Enemy Narration": enemy_info}
         if self.merant.lose():
             pass
         elif self.enemy.win():
