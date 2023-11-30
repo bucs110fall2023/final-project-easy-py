@@ -47,8 +47,21 @@ An rpg with stats attack options, and a modicum of plot
 Test Case 1: Save management
 
     Test steps:
-    1. Press Start through the title screen
-    2. Press a number on the keyboard for a save
-    3. verify that the savefile is selectable and is altered when the file is written to
-    Expected Outcome: The player should be able to select a file and the file is changed when the player saves
+    1. Press Start through the title screen.
+    2. Press a number on the keyboard for a save.
+    3. verify that the savefile is selectable and is altered when the file is written to.
+    Expected Outcome: The player should be able to select a file and the file is changed when the player saves.
+
+Test Case 2: Player movement
+
+    Test steps:
+    1. Get to the overworld in the game.
+    2. press the left, up, down, right arrow keys.
+    3. verify the the character the player controls moves in the respective direction.
+    Expected Outcome: The player should be able to move the character in accordence to the arrow key inputs given.
+
+Test Case 3: Scrolling text
+
+Test Case 4: Conflict Resolution
+
 
