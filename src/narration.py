@@ -16,6 +16,7 @@ class ScrollingText:
             font = pygame.font.Font(None, int(self.width / 20))
             y_pos = self.width
             while True:    
+                y_pos = -50
                 for scrolling_line in story_lines:
                     msg = font.render(scrolling_line, True, "white")
                     self.screen.blit(msg, (10, y_pos))
