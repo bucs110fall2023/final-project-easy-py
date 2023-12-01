@@ -61,7 +61,23 @@ Test Case 2: Player movement
     Expected Outcome: The player should be able to move the character in accordence to the arrow key inputs given.
 
 Test Case 3: Scrolling text
+    Test steps:
+    1. Get past save selection and start the game.
+    2. read the story scrolling upwards (like Star Wars).
+    3. verify that all of the text is there and in the correct order.
+    Expected Outcome: The player should be able to read and understand the story by plain observation after entering it.
 
 Test Case 4: Conflict Resolution
+    Test steps;
+    1. Enter into and RPG battle.
+    2. Select the attack option.
+    3. verify that the enemy's health goes down.
+    4. Get the enemy's health to 0.
+    5. verify that the battle ends in player victory.
+    6. the enemy attacks the player character.
+    7. verify that the player's health goes down.
+    8. the enemy gets the player's health to go to 0.
+    9. verify the battle ends in a gameover.
+    Expected Outcome: The battle should terminated when either combatants health goes to zero and go to the appropriate screen in accordance with the player's success.
 
 
