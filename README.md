@@ -79,5 +79,6 @@ Test Case 4: Conflict Resolution
     8. the enemy gets the player's health to go to 0.
     9. verify the battle ends in a gameover.
     Expected Outcome: The battle should terminated when either combatants health goes to zero and go to the appropriate screen in accordance with the player's success.
+    
 
 
