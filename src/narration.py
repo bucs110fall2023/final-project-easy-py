@@ -8,7 +8,7 @@ class ScrollingText:
         self.length = length
         self.width = width
 
-    def scroll(self):
+    def scroll(self): # revisit, currently a bust
         with open(self.file, "r") as text:
             story_lines = []
             for line in text.readlines():
