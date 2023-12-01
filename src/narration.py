@@ -14,3 +14,9 @@ class ScrollingText:
             for line in text.readlines():
                 story_lines = []
                 story_lines.append(line)
+            font = pygame.font.Font(None, self.width / 20)
+            y_pos = self.width
+            for scrolling_line in len(story_lines):
+                
+                font.render(scrolling_line, True, "white")
+
