@@ -9,8 +9,8 @@ class OverworldUnit:
         """
         self.x = x
         self.y = y
-        self.length = length
-        self.width = width
+        self.length = length # proportion of screen
+        self.width = width # proportion of screen 
 
     def move(self, input):
         """
