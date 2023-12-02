@@ -1,0 +1,12 @@
+import pygame
+
+class BattleDis:
+
+    def __init__(self, screen, length, width, hp):
+        self.screen = screen
+        self.length = length
+        self.width = width
+        self.hp = hp
+
+    def battle_start(self):
+        pass
