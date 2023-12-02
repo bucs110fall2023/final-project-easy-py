@@ -15,6 +15,9 @@ class BattleDis:
             self.screen.blit(player_hp, ((10, (self.width - (self.width / 10)))))
             pygame.display.flip()
 
+    def battle_dialogue(self, hero_damage, enemy_damage, victory_bool, loss_bool):
+        pass
+
 
 def test():
     pygame.init()
