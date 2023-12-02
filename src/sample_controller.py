@@ -1,5 +1,5 @@
 import pygame
-from src.battle_seq import *
+from src.battle_seq import BattleSeq
 class Controller:
 
     def __init__(self):

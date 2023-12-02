@@ -1,4 +1,4 @@
-from src.unit import *
+from src.unit import Hero, Enemy
 
 class BattleSeq:
 
