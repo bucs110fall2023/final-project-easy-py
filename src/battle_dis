@@ -7,5 +7,19 @@ class BattleDis:
         self.length = length
         self.width = width
 
-    def battle_screen(self):
-        pass
+    def battle_screen(self, hp):
+        while True:    
+            font = pygame.font.Font(None, int(self.width / 10))
+            stats_msg = f"Merant: hp {hp}"
+            player_hp = font.render(stats_msg, True, "white")
+            self.screen.blit(player_hp, ((10, (self.width - (self.width / 10)))))
+            pygame.display.flip()
+
+
+def test():
+    pygame.init()
+    display = pygame.display.set_mode()
+    length, width = pygame.display.get_window_size()
+    test = BattleDis(display, length, width)
+    test.battle_screen(10)
+test()
