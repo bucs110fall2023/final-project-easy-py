@@ -22,7 +22,7 @@ class ScrollingText:
                     self.screen.blit(msg, (10, y_pos))
                     pygame.display.flip()
                     y_pos -= 1
-                    self.screen.fill((0, 0, 0))
+                    self.screen.fill("black")
 
 def test():
     pygame.init()

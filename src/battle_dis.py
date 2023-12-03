@@ -24,28 +24,28 @@ class BattleDis:
                 battle_event = font.render(merant_damage_msg, True, "white")
                 self.screen.blit(battle_event, ((10, (self.width / 10))))
                 pygame.display.flip()
-                self.screen.fill((0, 0, 0))
+                self.screen.fill("black")
             if enemy_damage or enemy_damage == 0:
                 font = pygame.font.Font(None, int(self.width / 10))
                 enemy_damage_msg = f"{enemy_name} endured damage of {hero_damage}"
                 battle_event = font.render(enemy_damage_msg, True, "white")
                 self.screen.blit(battle_event, ((10, (self.width / 10))))
                 pygame.display.flip()
-                self.screen.fill((0, 0, 0))            
+                self.screen.fill("black")           
             if victory_bool:
                 font = pygame.font.Font(None, int(self.width / 10))
                 declaration = f"Merant Wins!"
                 battle_event = font.render(declaration, True, "white")
                 self.screen.blit(battle_event, ((10, (self.width / 2))))
                 pygame.display.flip()
-                self.screen.fill((0, 0, 0))
+                self.screen.fill("black")
             if loss_bool:
                 font = pygame.font.Font(None, int(self.width / 10))
                 declaration = f"Merant Loses."
                 battle_event = font.render(declaration, True, "white")
                 self.screen.blit(battle_event, ((10, (self.width / 2))))
                 pygame.display.flip()
-                self.screen.fill((0, 0, 0))
+                self.screen.fill("black")
 
 
 
