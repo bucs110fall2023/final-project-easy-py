@@ -22,7 +22,7 @@ class BattleDis:
                 font = pygame.font.Font(None, int(self.width / 10))
                 merant_damage_msg = f"Merant endured damage of {hero_damage}"
                 battle_event = font.render(merant_damage_msg, True, "white")
-                self.screen.blit(battle_event, ((10, (self.width / 2))))
+                self.screen.blit(battle_event, ((10, (self.width / 10))))
                 pygame.display.flip()
                 self.screen.fill((0, 0, 0))
             if enemy_damage or enemy_damage == 0:
