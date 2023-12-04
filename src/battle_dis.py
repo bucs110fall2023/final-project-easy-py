@@ -13,11 +13,11 @@ class BattleDis:
             stats_msg = f"Merant: hp {hp}"
             player_hp = font.render(stats_msg, True, "white")
             self.screen.blit(player_hp, ((10, (self.width - (self.width / 10)))))
-            pygame.display.flip()
+            return self.screen
 
     def battle_dialogue(self, hp, hero_damage=None, enemy_damage=None, enemy_name=None, victory_bool=None, loss_bool=None): # revisit, also a bust
         while True:    
-            self.battle_screen(hp) # can't have both at the same time.
+            self.screen = self.battle_screen(hp) # can't have both at the same time.
             if hero_damage or hero_damage == 0:
                 font = pygame.font.Font(None, int(self.width / 10))
                 merant_damage_msg = f"Merant endured damage of {hero_damage}"
