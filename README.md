@@ -45,7 +45,7 @@ An rpg with stats attack options, and a modicum of plot
 ## ATP
 
 Test Case 1: Save management
-
+Test Description: Test is player is able to save game into a save file
     Test steps:
     1. Press Start through the title screen.
     2. Press a number on the keyboard for a save.
@@ -53,7 +53,7 @@ Test Case 1: Save management
     Expected Outcome: The player should be able to select a file and the file is changed when the player saves.
 
 Test Case 2: Player movement
-
+Test Description: Verify the player's character is able to move around the screen as expected
     Test steps:
     1. Get to the overworld in the game.
     2. press the left, up, down, right arrow keys.
@@ -61,6 +61,7 @@ Test Case 2: Player movement
     Expected Outcome: The player should be able to move the character in accordence to the arrow key inputs given.
 
 Test Case 3: Scrolling text
+Test Description: Verify the game's sotry line scrolls upward on the screen
     Test steps:
     1. Get past save selection and start the game.
     2. read the story scrolling upwards (like Star Wars).
@@ -68,6 +69,7 @@ Test Case 3: Scrolling text
     Expected Outcome: The player should be able to read and understand the story by plain observation after entering it.
 
 Test Case 4: Conflict Resolution
+Test Description: Confirm that player can attack enemies and enimies can attack player and game ends approiately to the outcome of battle.
     Test steps;
     1. Enter into and RPG battle.
     2. Select the attack option.
@@ -79,6 +81,11 @@ Test Case 4: Conflict Resolution
     8. the enemy gets the player's health to go to 0.
     9. verify the battle ends in a gameover.
     Expected Outcome: The battle should terminated when either combatants health goes to zero and go to the appropriate screen in accordance with the player's success.
-    
 
-
+Test Case 5: Health Display
+Test Description: test that player is able to see character's health on the game screen.
+    1. Start the game.
+    2. See health displayed on screen.
+    2. Play game until you get atacked.
+    3. Verify that health updates after taking damage.
+    Expected Outcome: Player's health should be displayed on screen and should update after taking damage.
