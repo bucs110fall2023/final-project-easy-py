@@ -107,11 +107,11 @@ class Hero(Unit):
                 mp_inc = range(1, 4)
                 with open(r"../assets/save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Attack"] += ackt_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Defense"] += defe_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Health Points"] += hp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] += mp_inc
-                    update[str(self.save)]["Unit Stats"][str(self.name)]["Maximum Magic Points"] = self.curr_lvl
+                    update[self.save]["Unit Stats"][self.name]["Attack"] += ackt_inc
+                    update[self.save]["Unit Stats"][self.name]["Defense"] += defe_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Health Points"] += hp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] += mp_inc
+                    update[self.save]["Unit Stats"][self.name]["Maximum Magic Points"] = self.curr_lvl
                     json.dump(update, updated_txt, indent=4)
                 return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
             else:
