@@ -1,4 +1,5 @@
 import json
+import pygame
 
 class Unit:
 
@@ -116,3 +117,25 @@ class Hero(Unit):
                 return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
             else:
                 return {}
+
+class HealthBar:
+    def __init__(self, x, y, w, h, max_hp):
+        """
+        
+
+        """
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+        self.max_hp = max_hp
+
+    def draw(self, surface):
+        """
+        draws the hero's health bar
+        args: self, surface
+        return: 
+        """
+        ratio = self.hp / self.max_hp
+        pygame.draw.rect(surface, "red", (self.x, self.y, self.w, self.h))
+        pygame.draw.rect(surface, "green", (self.x, self.y, self.w * ratio, self.h))
