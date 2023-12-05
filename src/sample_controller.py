@@ -1,5 +1,8 @@
 import pygame
 from src.battle_seq import Hero, Enemy, BattleSeq
+from src.battle_dis import BattleDis
+from src.save_selec import SaveSelec
+from src.narration import ScrollingText
 class Controller:
 
     def __init__(self):
@@ -28,7 +31,13 @@ class Controller:
       ### below are some sample loop states ###
 
     def selection_loop(self):
-        pass
+        
+        
+        while self.state == "SELECTION":
+            pass
+            for event in pygame.event.get:
+                pass
+
         # event loop
 
         # update data
