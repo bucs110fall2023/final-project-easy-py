@@ -2,10 +2,15 @@ import pygame
 
 class ScrollingText:
 
-    def __init__(self, screen, file, length, width):
+    def __init__(self, screen, file, width, height):
+        """
+        Accepts the pygame screen and its width and height as properties of the initialized object as well as a file address
+        args : self, screen, file, width, height
+        return: None
+        """        
         self.screen = screen
         self.file = file
-        self.length = length
+        self.height = height
         self.width = width
 
     def scroll(self): # revisit, currently a bust
@@ -26,8 +31,8 @@ class ScrollingText:
 def test():
     pygame.init()
     display = pygame.display.set_mode()
-    length, width = pygame.display.get_window_size()
-    test = ScrollingText(display, "story_beginning.txt", length, width)
+    width, height = pygame.display.get_window_size()
+    test = ScrollingText(display, "story_beginning.txt", width, height)
     while True:
         test.scroll()
 test()

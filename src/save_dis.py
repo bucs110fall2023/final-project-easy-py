@@ -2,14 +2,14 @@ import pygame
 
 class SaveDis:
 
-    def __init__(self, screen, length, width):
+    def __init__(self, screen, width, height):
         """
-        Accepts the pygame screen and its length and width as properties of the initialized object
-        args : self
+        Accepts the pygame screen and its width and height as properties of the initialized object
+        args : self, screen, width, height
         return: None
         """
         self.screen = screen
-        self.length = length
+        self.height = height
         self.width = width
 
     def save_display(self):
@@ -36,8 +36,8 @@ class SaveDis:
 def test():
     pygame.init()
     display = pygame.display.set_mode()
-    length, width = pygame.display.get_window_size()
-    test = SaveDis(display, length, width)
+    width, height = pygame.display.get_window_size()
+    test = SaveDis(display, width, height)
     while True:
         test.save_display()
 test()

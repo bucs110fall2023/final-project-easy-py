@@ -2,14 +2,14 @@ import pygame
 
 class BattleDis:
 
-    def __init__(self, screen, length, width):
+    def __init__(self, screen, width, height):
         """
-        Accepts the pygame screen and its length and width as properties of the initialized object
-        args : self
+        Accepts the pygame screen and its width and height as properties of the initialized object
+        args : self, screen, width, height
         return: None
         """        
         self.screen = screen
-        self.length = length
+        self.height = height
         self.width = width
 
     def battle_screen(self, hp):
@@ -62,8 +62,8 @@ class BattleDis:
 def test():
     pygame.init()
     display = pygame.display.set_mode()
-    length, width = pygame.display.get_window_size()
-    test = BattleDis(display, length, width)
+    width, height = pygame.display.get_window_size()
+    test = BattleDis(display, width, height)
     while True:
         test.battle_dialogue(10, 10)
 test()

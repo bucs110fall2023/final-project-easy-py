@@ -2,6 +2,7 @@ import pygame
 from src.battle_seq import Hero, Enemy, BattleSeq
 from src.battle_dis import BattleDis
 from src.save_selec import SaveSelec
+from src.save_dis import SaveDis
 from src.narration import ScrollingText
 class Controller:
 
@@ -9,7 +10,7 @@ class Controller:
         # setup pygame data
         pygame.init()
         self.screen = pygame.display.set_mode()
-        self.screen_width, self.screen_length = self.screen.get_size()
+        self.screen_width, self.screen_height = self.screen.get_size()
         self.state = "SELECTION"
 
 
@@ -32,7 +33,8 @@ class Controller:
 
     def selection_loop(self):
         
-        
+        saving = SaveSelec()
+        saving_view = SaveDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "SELECTION":
             pass
             for event in pygame.event.get:
