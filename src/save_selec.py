@@ -5,6 +5,11 @@ class SaveSelec:
         pass
 
     def selection(self, input):
+        """
+        receives input and return the approopriate save address
+        args: self, input
+        return: None
+        """
         if input == "1":
             return "Save 1"
         if input == "2":

@@ -3,16 +3,26 @@ import pygame
 class SaveDis:
 
     def __init__(self, screen, length, width):
+        """
+        Accepts the pygame screen and its length and width as properties of the initialized object
+        args : self
+        return: None
+        """
         self.screen = screen
         self.length = length
         self.width = width
 
     def save_display(self):
+        """
+        Displays the save screen for the player to choose a save file
+        args: Self
+        return None
+        """
         while True:
             request = "Select a save file:"
-            fst = "Save 1"
-            scnd = "Save 2"
-            trd = "Save 3"
+            fst = "Save 1: press 1"
+            scnd = "Save 2: press 2"
+            trd = "Save 3 press 3"
             font = pygame.font.Font(None, int(self.width / 10))
             req_msg = font.render(request, True, "white") #(10, self.width / 10))
             fst_msg = font.render(fst, True, "white") #(10, self.width / 3))
