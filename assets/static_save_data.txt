@@ -1,0 +1,68 @@
+{
+    "Save 1": {
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Points": {},
+                "Current Experience": 0,
+                "Current Level": 0
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
+            }
+        },
+        "Progress": []
+    },
+    "Save 2": {
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Points": {},
+                "Current Experience": 0,
+                "Current Level": 0
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
+            }
+        },
+        "Progress": []
+    },
+    "Save 3": {
+        "Unit Stats": {
+            "Merant": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Points": {},
+                "Current Experience": 0,
+                "Current Level": 0
+            },
+            "(Enemy)PH": {
+                "Attack": 0,
+                "Defense": 0,
+                "Maximum Health Points": 0,
+                "Maximum Magic Points": 0,
+                "Experience Value": 0,
+                "Weakness": {"Fire": true, "Ice": false, "Lightning": false}
+            }
+        },
+        "Progress": []
+    }
+}
