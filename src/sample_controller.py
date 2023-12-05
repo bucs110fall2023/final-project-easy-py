@@ -15,6 +15,12 @@ class Controller:
         while True:
             if self.state == "SELECTION":
                 self.selectionloop()
+            if self.state == "OVERWORLD":
+                self.overworld_game_loop()
+            if self.state == "BATTLE":
+                self.battle_gameloop()
+            if self.state == "GAMEOVER":
+                self.gameover_loop()
 
 
       ### below are some sample loop states ###
