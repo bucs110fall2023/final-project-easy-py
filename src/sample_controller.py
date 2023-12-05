@@ -14,7 +14,9 @@ class Controller:
         # select state loop
         while True:
             if self.state == "SELECTION":
-                self.selectionloop()
+                self.selection_loop()
+            if self.state == "STORY":
+                self.story_loop()
             if self.state == "OVERWORLD":
                 self.overworld_game_loop()
             if self.state == "BATTLE":
@@ -33,6 +35,9 @@ class Controller:
 
         # redraw
 
+    def story_loop(self):
+        pass
+    
     def overworld_game_loop(self):
         pass
         # event loop
