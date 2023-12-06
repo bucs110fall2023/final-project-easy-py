@@ -23,6 +23,8 @@ class BattleSeq:
                 player_info = self.merant.attack(self.enemy_name)
                 enemy_info = self.enemy.attack("Merant")
                 return {"Player Narration": player_info, "Enemy Narration": enemy_info}
+            if input == "2":
+                player_info = self.merant.heal()
         if self.merant.lose():
             pass
         elif self.enemy.win():

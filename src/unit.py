@@ -33,6 +33,16 @@ class Unit:
         else:
             opponent.hp = opponent.hp - damage
             return {"Opponent": opponent.name, "Enemy Damage": damage}
+        
+    def heal(self):
+        """
+        The rpg unit heals itself
+        args: self
+        return: dictionary
+        """
+        heal = 5
+        self.hp += heal
+        return {"Unit": self.name, "Recovered hp": self.heal}
 
 
 class Enemy(Unit):
