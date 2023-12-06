@@ -35,5 +35,5 @@ def test():
     test = ScrollingText(display, "story_beginning.txt", width, height)
     while True:
         test.scroll()
-test()
+#test()
 

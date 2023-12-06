@@ -1,5 +1,4 @@
 import json
-import pygame
 
 class Unit:
 
@@ -9,7 +8,7 @@ class Unit:
         args: self, save, name
         return: None
         """
-        with open(r"../assets/save_data.json") as stats:
+        with open(r"../final-project-easy-py/assets/save_data.json") as stats:
 
             stat = json.load(stats)
             self.ackt = stat[save]["Unit Stats"][name]["Attack"]
@@ -77,7 +76,7 @@ class Hero(Unit):
         args: self, save, name
         returns: None
         """
-        with open(r"../assets/save_data.json") as stats:
+        with open(r"../final-project-easy-py/assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_pnts = stat[save]["Unit Stats"][name]["Experience Points"]
@@ -116,7 +115,7 @@ class Hero(Unit):
                 hp_inc = range(1, 4)
                 defe_inc = range(1, 4)
                 mp_inc = range(1, 4)
-                with open(r"../assets/save_data.json", "w") as updated_txt:
+                with open(r"../final-project-easy-py/assets/save_data.json", "w") as updated_txt:
                     update = json.load(updated_txt)
                     update[self.save]["Unit Stats"][self.name]["Attack"] += ackt_inc
                     update[self.save]["Unit Stats"][self.name]["Defense"] += defe_inc
@@ -127,25 +126,3 @@ class Hero(Unit):
                 return {"Merant": self.name, "Attack": str(ackt_inc), "Defense": str(defe_inc), "Health Points": str(hp_inc), "Magic Points": str(mp_inc), "New Level": str(self.curr_lvl)}
             else:
                 return {}
-
-class HealthBar:
-    def __init__(self, x, y, w, h, max_hp):
-        """
-        
-
-        """
-        self.x = x
-        self.y = y
-        self.w = w
-        self.h = h
-        self.max_hp = max_hp
-
-    def draw(self, surface):
-        """
-        draws the hero's health bar
-        args: self, surface
-        return: 
-        """
-        ratio = self.hp / self.max_hp
-        pygame.draw.rect(surface, "red", (self.x, self.y, self.w, self.h))
-        pygame.draw.rect(surface, "green", (self.x, self.y, self.w * ratio, self.h))

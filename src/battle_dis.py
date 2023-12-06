@@ -73,4 +73,4 @@ def test():
     test = BattleDis(display, width, height)
     while True:
         test.battle_dialogue(10, 10)
-test()
+# test()

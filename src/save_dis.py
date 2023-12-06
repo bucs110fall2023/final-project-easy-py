@@ -40,4 +40,4 @@ def test():
     test = SaveDis(display, width, height)
     while True:
         test.save_display()
-test()
+#test()

@@ -65,13 +65,13 @@ class Controller:
         # redraw
 
     def battle_gameloop(self):
-        with open(r"../assets/save_data.json", "r") as phew:
+        with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
             save_data = json.load(phew)
-            if save_data[self.save]["progress"] == 0:
+            if save_data[self.save]["Progress"] == 0:
                 self.enemy = "Brigand"
-            if save_data[self.save]["progress"] == 1:
+            if save_data[self.save]["Progress"] == 1:
                 self.enemy = "Swooper"
-            if save_data[self.save]["progress"] == 2:
+            if save_data[self.save]["Progress"] == 2:
                 self.enemy = "Golu-Gross"
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
