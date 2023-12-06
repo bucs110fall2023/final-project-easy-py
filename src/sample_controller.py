@@ -77,7 +77,8 @@ class Controller:
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
             if battle_do.in_battle() == None: 
-                for event in pygame.event.get:
+                battle_eye.battle_screen(battle_do.get_hp())
+                for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
                         if event.type == pygame.K_1:
                             battle_info = battle_do.in_battle("1")
