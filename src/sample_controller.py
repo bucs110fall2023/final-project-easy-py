@@ -76,7 +76,7 @@ class Controller:
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
-            if battle_do.in_battle() == False: 
+            if battle_do.in_battle()["Loss"] and battle_do.in_battle()["Victory"] == False: 
                 for event in pygame.event.get:
                     if event.type == pygame.KEYDOWN:
                         pass

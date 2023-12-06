@@ -33,10 +33,10 @@ class BattleDis:
         args: self, hp, hero_damage, enemy_damage, enemy_name, victory_bool, loss_bool
         return: None
         """   
+        if hp == None: return None
         self.screen = self.battle_screen(hp) # can't have both at the same time.
-        font = pygame.font.Font(None, int(self.height / 10))
-        if hp == None: return None  
-        elif hero_damage or hero_damage == 0:
+        font = pygame.font.Font(None, int(self.height / 10))  
+        if hero_damage or hero_damage == 0:
             merant_damage_msg = f"Merant endured damage of {hero_damage}"
             battle_event = font.render(merant_damage_msg, True, "white")
             self.screen.blit(battle_event, ((10, (self.height / 10))))
