@@ -5,5 +5,5 @@ def test():
     test = Controller()
     test.save = "Save 1"
     test.state = "BATTLE"
-    test.battle_gameloop()
+    test.main_loop()
 test()
