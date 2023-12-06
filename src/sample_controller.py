@@ -77,11 +77,15 @@ class Controller:
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
             if battle_do.in_battle() == None: 
-                battle_eye.battle_screen(battle_do.get_hp())
-                pygame.display.flip()
+                #battle_eye.battle_screen(battle_do.get_hp())
+                #pygame.display.flip()
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
+                        #print("pre")
                         if event.type == pygame.K_1:
+                            print("1")
+                            battle_eye.battle_screen(battle_do.get_hp())
+                            pygame.display.flip()
                             battle_info = battle_do.in_battle("1")
                             battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
                             battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
