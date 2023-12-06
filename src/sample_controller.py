@@ -36,10 +36,16 @@ class Controller:
         saving = SaveSelec()
         saving_view = SaveDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "SELECTION":
-            pass
+            saving_view.save_display()
             for event in pygame.event.get:
-                pass
-
+                if event.type == pygame.KEYDOWN:
+                    if event.type == pygame.K_1:
+                        saving.selection("1")
+                    if event.tyoe == pygame.K_2:
+                        saving.selection("2")
+                    if event.type == pygame.K_3:
+                        saving.selection("3")
+                    self.state = "STORY"
         # event loop
 
         # update data
