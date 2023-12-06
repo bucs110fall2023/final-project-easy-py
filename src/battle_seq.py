@@ -12,6 +12,14 @@ class BattleSeq:
         self.enemy = Enemy(save, name)
         self.enemy_name = name
 
+    def get_hp(self):
+        """
+        Gets the hp of the player charater
+        args: self
+        return: integer
+        """
+        return self.merant.hp
+    
     def in_battle(self, input):
         """
         Follows the events of a battle (the main part of the game)

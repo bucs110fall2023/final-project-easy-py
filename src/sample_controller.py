@@ -73,10 +73,15 @@ class Controller:
                 self.enemy = "Swooper"
             if save_data[self.save]["progress"] == 2:
                 self.enemy = "Swooper"
-        batte_do = BattleSeq(self.save, self.enemy)
+        battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
-           battle_info = batte_do.in_battle()
+            for event in pygame.event.get:
+                if event.type == pygame.KEYDOWN:
+                    if event.type == pygame.K_1:
+                        battle_info = battle_do.in_battle("1")
+                        battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
+                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
     
     def gameover_loop(self):
         pass

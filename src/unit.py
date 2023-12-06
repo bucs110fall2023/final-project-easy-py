@@ -29,7 +29,7 @@ class Unit:
         """
         damage = self.ackt - opponent.defn
         if damage <= 0:
-            return {"Opponent": opponent.name, "Lack of Damage": "No sell"}
+            return {"Opponent": opponent.name, "Enemy Damage": 0}
         else:
             opponent.hp = opponent.hp - damage
             return {"Opponent": opponent.name, "Enemy Damage": damage}
