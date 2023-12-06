@@ -11,7 +11,7 @@
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 2,
+                "Attack": 7,
                 "Defense": 2,
                 "Maximum Health Points": 5,
                 "Maximum Magic Points": 1,
@@ -23,7 +23,7 @@
                 }
             },
             "Swooper": {
-                "Attack": 3,
+                "Attack": 8,
                 "Defense": 3,
                 "Maximum Health Points": 10,
                 "Maximum Magic Points": 5,
@@ -35,7 +35,7 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 4,
+                "Attack": 9,
                 "Defense": 4,
                 "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
@@ -61,7 +61,7 @@
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 2,
+                "Attack": 7,
                 "Defense": 2,
                 "Maximum Health Points": 5,
                 "Maximum Magic Points": 1,
@@ -73,7 +73,7 @@
                 }
             },
             "Swooper": {
-                "Attack": 3,
+                "Attack": 8,
                 "Defense": 3,
                 "Maximum Health Points": 10,
                 "Maximum Magic Points": 5,
@@ -85,7 +85,7 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 4,
+                "Attack": 9,
                 "Defense": 4,
                 "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
@@ -111,7 +111,7 @@
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 2,
+                "Attack": 7,
                 "Defense": 2,
                 "Maximum Health Points": 5,
                 "Maximum Magic Points": 1,
@@ -123,7 +123,7 @@
                 }
             },
             "Swooper": {
-                "Attack": 3,
+                "Attack": 8,
                 "Defense": 3,
                 "Maximum Health Points": 10,
                 "Maximum Magic Points": 5,
@@ -135,7 +135,7 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 4,
+                "Attack": 9,
                 "Defense": 4,
                 "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
