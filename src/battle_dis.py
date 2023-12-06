@@ -18,10 +18,13 @@ class BattleDis:
         args: self, hp
         return: object
         """
-        font = pygame.font.Font(None, int(self.width / 10))
+        font = pygame.font.Font(None, int(self.height / 10))
         stats_msg = f"Merant: hp {hp}"
         player_hp = font.render(stats_msg, True, "white")
-        self.screen.blit(player_hp, ((10, (self.width - (self.width / 10)))))
+        self.screen.blit(player_hp, ((10, (self.height - (self.height / 10)))))
+        sndstats_msg = "Press 1 to attack, 2 to rest"
+        request = font.render(sndstats_msg, True, "white")
+        self.screen.blit(request, ((10, (self.height - (self.height / 3)))))
         return self.screen
 
     def battle_dialogue(self, hp, hero_damage=None, enemy_damage=None, enemy_name="ENEMY", victory_bool=False, loss_bool=False): # revisit, also a bust
@@ -31,29 +34,29 @@ class BattleDis:
         return: None
         """   
         self.screen = self.battle_screen(hp) # can't have both at the same time.
-        font = pygame.font.Font(None, int(self.width / 10))
+        font = pygame.font.Font(None, int(self.height / 10))
         if hero_damage or hero_damage == 0:
             merant_damage_msg = f"Merant endured damage of {hero_damage}"
             battle_event = font.render(merant_damage_msg, True, "white")
-            self.screen.blit(battle_event, ((10, (self.width / 10))))
+            self.screen.blit(battle_event, ((10, (self.height / 10))))
             pygame.display.flip()
             self.screen.fill("black")
         if enemy_damage or enemy_damage == 0:
             enemy_damage_msg = f"{enemy_name} endured damage of {hero_damage}"
             battle_event = font.render(enemy_damage_msg, True, "white")
-            self.screen.blit(battle_event, ((10, (self.width / 10))))
+            self.screen.blit(battle_event, ((10, (self.height / 10))))
             pygame.display.flip()
             self.screen.fill("black")           
         if victory_bool:
             declaration = f"Merant Wins!"
             battle_event = font.render(declaration, True, "white")
-            self.screen.blit(battle_event, ((10, (self.width / 2))))
+            self.screen.blit(battle_event, ((10, (self.height / 2))))
             pygame.display.flip()
             self.screen.fill("black")
         if loss_bool:
             declaration = f"Merant Loses."
             battle_event = font.render(declaration, True, "white")
-            self.screen.blit(battle_event, ((10, (self.width / 2))))
+            self.screen.blit(battle_event, ((10, (self.height / 2))))
             pygame.display.flip()
             self.screen.fill("black")
 

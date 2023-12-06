@@ -66,7 +66,8 @@ class Controller:
     def battle_gameloop(self):
         batte_do = BattleSeq(self.save)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
-        
+        while self.state == "BATTLE":
+            pass
     
     def gameover_loop(self):
         pass
