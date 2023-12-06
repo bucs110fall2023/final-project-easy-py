@@ -66,6 +66,8 @@ class Controller:
     def battle_gameloop(self):
         batte_do = BattleSeq(self.save)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
+        with open(r"../assets/save_data.json", "r") as phew:
+            pass
         while self.state == "BATTLE":
             batte_do.in_battle()
     
