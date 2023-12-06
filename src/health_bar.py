@@ -5,7 +5,7 @@ class HealthBar:
         """
         holds the x and y coordinates and the width and height of the healthbar]
         args: self, x, y, w, h, max_hp
-        return: none
+        return: None
         """
         self.x = x
         self.y = y
@@ -17,7 +17,7 @@ class HealthBar:
         """
         draws the hero's health bar
         args: self, surface
-        return: none
+        return: None
         """
         ratio = self.hp / self.max_hp
         pygame.draw.rect(surface, "red", (self.x, self.y, self.w, self.h))

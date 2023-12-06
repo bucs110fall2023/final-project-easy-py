@@ -54,7 +54,10 @@ class Controller:
         # redraw
 
     def story_loop(self):
-        pass
+        
+        while self.state == "STORY":
+            pass
+            
     
     def overworld_game_loop(self):
         pass
