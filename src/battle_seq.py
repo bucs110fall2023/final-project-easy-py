@@ -20,20 +20,21 @@ class BattleSeq:
         """
         return self.merant.hp
     
-    def in_battle(self, input):
+    def in_battle(self, input=None):
         """
         Follows the events of a battle (the main part of the game)
         args: self input
         return: None
         """
-        while not (self.merant.lose() and self.enemy.win()):
-            if input == "1":
-                player_info = self.merant.attack(self.enemy_name)
-                enemy_info = self.enemy.attack("Merant")
-                return {"Player Narration": player_info, "Enemy Narration": enemy_info}
-            if input == "2":
-                player_info = self.merant.heal()
+        if input == "1":
+            player_info = self.merant.attack(self.enemy_name)
+            enemy_info = self.enemy.attack("Merant")
+            return {"Player Narration": player_info, "Enemy Narration": enemy_info}
+        if input == "2":
+            player_info = self.merant.heal()
         if self.merant.lose():
-            pass
+            return {"Loss": True}
         elif self.enemy.win():
-            pass
+            return {"Victory": True}
+        else:
+            return False

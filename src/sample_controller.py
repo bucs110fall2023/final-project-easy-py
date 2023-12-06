@@ -72,19 +72,32 @@ class Controller:
             if save_data[self.save]["progress"] == 1:
                 self.enemy = "Swooper"
             if save_data[self.save]["progress"] == 2:
-                self.enemy = "Swooper"
+                self.enemy = "Golu-Gross"
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
-            for event in pygame.event.get:
-                if event.type == pygame.KEYDOWN:
-                    if event.type == pygame.K_1:
-                        battle_info = battle_do.in_battle("1")
-                        battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
-                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
-    
+            if battle_do.in_battle() == False: 
+                for event in pygame.event.get:
+                    if event.type == pygame.KEYDOWN:
+                        if event.type == pygame.K_1:
+                            battle_info = battle_do.in_battle("1")
+                            battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
+                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+                        if event.type == pygame.K_2:
+                            battle_info = battle_do.in_battle("2")
+                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+            elif battle_do.in_battle()["Loss"] == True:
+                battle_eye.battle_dialogue(battle_do.get_hp(), None, None, None, None, True)
+                pygame.time.wait(5000)
+                self.state = "GAMEOVER"
+            elif battle_do.in_battle()["Victory"] == True:
+                battle_eye.battle_dialogue(battle_do.get_hp(), None, None, None, True)
+                pygame.time.wait(5000)
+                self.state = "STORY"
+
     def gameover_loop(self):
-        pass
+        pygame.quit()
+        exit()
         # event loop
 
         # update data
