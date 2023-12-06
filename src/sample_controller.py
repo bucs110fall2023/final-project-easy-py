@@ -40,11 +40,11 @@ class Controller:
             for event in pygame.event.get:
                 if event.type == pygame.KEYDOWN:
                     if event.type == pygame.K_1:
-                        saving.selection("1")
+                        self.save = saving.selection("1")
                     if event.tyoe == pygame.K_2:
-                        saving.selection("2")
+                        self.save = saving.selection("2")
                     if event.type == pygame.K_3:
-                        saving.selection("3")
+                        self.save = saving.selection("3")
                     self.state = "STORY"
         # event loop
 
@@ -63,8 +63,10 @@ class Controller:
 
         # redraw
 
-    def battle_gameloop():
-        pass
+    def battle_gameloop(self):
+        batte_do = BattleSeq(self.save)
+        battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
+        
     
     def gameover_loop(self):
         pass
