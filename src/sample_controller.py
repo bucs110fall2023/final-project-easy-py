@@ -1,4 +1,5 @@
 import pygame
+import json
 from src.battle_seq import Hero, Enemy, BattleSeq
 from src.battle_dis import BattleDis
 from src.save_selec import SaveSelec
@@ -64,12 +65,18 @@ class Controller:
         # redraw
 
     def battle_gameloop(self):
-        batte_do = BattleSeq(self.save)
-        battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         with open(r"../assets/save_data.json", "r") as phew:
-            pass
+            save_data = json.load(phew)
+            if save_data[self.save]["progress"] == 0:
+                self.enemy = "Brigand"
+            if save_data[self.save]["progress"] == 1:
+                self.enemy = "Swooper"
+            if save_data[self.save]["progress"] == 2:
+                self.enemy = "Swooper"
+        batte_do = BattleSeq(self.save, self.enemy)
+        battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
-            batte_do.in_battle()
+           battle_info = batte_do.in_battle()
     
     def gameover_loop(self):
         pass
