@@ -51,7 +51,7 @@ class Enemy(Unit):
         args: self, save, name
         returns: None
         """
-        with open(r"../assets/save_data.json") as stats:
+        with open(r"../final-project-easy-py/assets/save_data.json") as stats:
             super().__init__(save, name)
             stat = json.load(stats)
             self.exp_val = stat[save]["Unit Stats"][name]["Experience Value"]

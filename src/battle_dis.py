@@ -65,12 +65,3 @@ class BattleDis:
         self.screen.blit(battle_event, ((10, (self.height / 2))))
         pygame.display.flip()
         self.screen.fill("black")
-
-def test():
-    pygame.init()
-    display = pygame.display.set_mode()
-    width, height = pygame.display.get_window_size()
-    test = BattleDis(display, width, height)
-    while True:
-        test.battle_dialogue(10, 10)
-# test()

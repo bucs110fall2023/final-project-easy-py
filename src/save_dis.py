@@ -33,11 +33,3 @@ class SaveDis:
         self.screen.blit(trd_msg, (10, ((3 * self.height) / 3) - (self.height / 10)))
         pygame.display.flip()
 
-def test():
-    pygame.init()
-    display = pygame.display.set_mode()
-    width, height = pygame.display.get_window_size()
-    test = SaveDis(display, width, height)
-    while True:
-        test.save_display()
-#test()
