@@ -76,7 +76,7 @@ class Controller:
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
-            if battle_do.in_battle() == False: 
+            if battle_do.in_battle() == None: 
                 for event in pygame.event.get:
                     if event.type == pygame.KEYDOWN:
                         if event.type == pygame.K_1:
@@ -86,7 +86,7 @@ class Controller:
                         elif event.type == pygame.K_2:
                             battle_info = battle_do.in_battle("2")
                             battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
-            elif battle_do.in_battle()["Loss"] == True:
+            elif battle_do.in_battle()["Victory"] == False:
                 battle_eye.loss()
                 pygame.time.wait(5000)
                 self.state = "GAMEOVER"

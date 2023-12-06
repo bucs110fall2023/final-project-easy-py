@@ -2,20 +2,20 @@
     "Save 1": {
         "Unit Stats": {
             "Merant": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 3,
                 "Experience Points": {},
                 "Current Experience": 0,
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 2,
+                "Defense": 2,
+                "Maximum Health Points": 5,
+                "Maximum Magic Points": 1,
+                "Experience Value": 5,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -23,11 +23,11 @@
                 }
             },
             "Swooper": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 5,
+                "Experience Value": 10,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -35,11 +35,11 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
+                "Attack": 4,
+                "Defense": 4,
+                "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Experience Value": 15,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -52,20 +52,20 @@
     "Save 2": {
         "Unit Stats": {
             "Merant": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 3,
                 "Experience Points": {},
                 "Current Experience": 0,
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 2,
+                "Defense": 2,
+                "Maximum Health Points": 5,
+                "Maximum Magic Points": 1,
+                "Experience Value": 5,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -73,11 +73,11 @@
                 }
             },
             "Swooper": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 5,
+                "Experience Value": 10,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -85,11 +85,11 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
+                "Attack": 4,
+                "Defense": 4,
+                "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Experience Value": 15,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -102,20 +102,20 @@
     "Save 3": {
         "Unit Stats": {
             "Merant": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 3,
                 "Experience Points": {},
                 "Current Experience": 0,
                 "Current Level": 0
             },
             "Brigand": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 2,
+                "Defense": 2,
+                "Maximum Health Points": 5,
+                "Maximum Magic Points": 1,
+                "Experience Value": 5,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -123,11 +123,11 @@
                 }
             },
             "Swooper": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
-                "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Attack": 3,
+                "Defense": 3,
+                "Maximum Health Points": 10,
+                "Maximum Magic Points": 5,
+                "Experience Value": 10,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
@@ -135,11 +135,11 @@
                 }
             },
             "Golu-Gross": {
-                "Attack": 0,
-                "Defense": 0,
-                "Maximum Health Points": 0,
+                "Attack": 4,
+                "Defense": 4,
+                "Maximum Health Points": 15,
                 "Maximum Magic Points": 0,
-                "Experience Value": 0,
+                "Experience Value": 15,
                 "Weakness": {
                     "Fire": true,
                     "Ice": false,
