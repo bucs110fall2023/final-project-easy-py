@@ -41,14 +41,17 @@ class BattleDis:
             battle_event = font.render(merant_damage_msg, True, "white")
             self.screen.blit(battle_event, ((10, (self.height / 10))))
             pygame.display.flip()
-            #self.screen.fill("black")
+            pygame.time.wait(2000)
+            self.screen.fill("black")
+            pygame.display.flip()
         elif enemy_damage or enemy_damage == 0:
             enemy_damage_msg = f"{enemy_name} endured damage of {hero_damage}"
             battle_event = font.render(enemy_damage_msg, True, "white")
             self.screen.blit(battle_event, ((10, (self.height / 10))))
             pygame.display.flip()
-            #self.screen.fill("black")
-                 
+            pygame.time.wait(2000)
+            self.screen.fill("black")
+            pygame.display.flip()
 
     def victory(self):
         font = pygame.font.Font(None, int(self.height / 10))
@@ -56,7 +59,9 @@ class BattleDis:
         battle_event = font.render(declaration, True, "white")
         self.screen.blit(battle_event, ((10, (self.height / 2))))
         pygame.display.flip()
-        #self.screen.fill("black")
+        pygame.time.wait(2000)
+        self.screen.fill("black")
+        pygame.display.flip()
 
     def loss(self):
         font = pygame.font.Font(None, int(self.height / 10))
@@ -64,4 +69,6 @@ class BattleDis:
         battle_event = font.render(declaration, True, "white")
         self.screen.blit(battle_event, ((10, (self.height / 2))))
         pygame.display.flip()
-        #self.screen.fill("black")
+        pygame.time.wait(2000)
+        self.screen.fill("black")
+        pygame.display.flip()
