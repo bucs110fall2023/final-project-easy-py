@@ -116,7 +116,7 @@ class Controller:
                             adventure.screen_jump(pos)
                             adventure.refresh()
                         if adventurer.destination(self.place):
-                            self.state == "BATTLE"
+                            self.state = "BATTLE"
 
         
         # event loop
