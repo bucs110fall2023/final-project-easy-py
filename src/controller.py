@@ -68,6 +68,8 @@ class Controller:
                 self.file = r"../final-project-easy-py/assets/story_middle.txt"
             if save_data[self.save]["Progress"] == 2:
                 self.file = r"../final-project-easy-py/assets/story_end.txt"
+            if save_data[self.save]["Progress"] == 3:
+                self.file = r"../final-project-easy-py/assets/a_winner.txt"
         
         text = ScrollingText(self.screen, self.file, self.screen_width, self.screen_height)
         text.compile()
@@ -76,8 +78,10 @@ class Controller:
             text.refresh()
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
+                    if event.key == pygame.K_SPACE and save_data[self.save]["Progress"] < 3:
                         self.state = "OVERWORLD"
+                    else:
+                        self.state = "GAMEOVER"
             
             
             
