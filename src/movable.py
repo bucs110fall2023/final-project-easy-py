@@ -17,13 +17,13 @@ class OverworldUnit:
         return: None
         """
         if input == "UP":
-            self.y += 10
+            self.y -= 20
         elif input == "DOWN":
-            self.y -= 10
+            self.y += 20
         elif input == "RIGHT":
-            self.x += 10
+            self.x += 20
         elif input == "LEFT":
-            self.x -= 10
+            self.x -= 20
         return self.x, self.y
 
     def start(self):
