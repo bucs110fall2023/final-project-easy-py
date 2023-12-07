@@ -1,7 +1,7 @@
 
 class OverworldUnit:
 
-    def __init__(self, x, y, length, width):
+    def __init__(self, x, y, width, height):
         """
         Initializes the information the player unit in the overworld
         args: self, x, y, length, width
@@ -9,7 +9,7 @@ class OverworldUnit:
         """
         self.x = x
         self.y = y
-        self.length = length # proportion of screen
+        self.height = height # proportion of screen
         self.width = width # proportion of screen 
 
     def move(self, input):
