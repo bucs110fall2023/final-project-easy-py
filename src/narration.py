@@ -22,7 +22,7 @@ class ScrollingText:
     def length(self):
         return len(self.story_lines)
     
-    def scroll(self, index): # revisit, currently a bust
+    def scroll(self): # revisit, currently a bust
         if self.y_pos >= 0:    
             scrolling_line = self.story_line
             msg = self.font.render(scrolling_line, True, "white")
@@ -41,12 +41,8 @@ def test():
     test = ScrollingText(display, "../assets/story_beginning.txt", width, height)
     test.compile()
     while True:
-        while test.scroll(0) == True:
-            test.scroll(0)
+        while test.scroll() == True:
+            test.scroll()
             test.refresh()
-        else:
-            while test.scroll(1) == True:
-                test.scroll(1)
-                test.refresh()
 #test()
 
