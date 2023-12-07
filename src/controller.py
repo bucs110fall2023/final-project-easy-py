@@ -97,8 +97,10 @@ class Controller:
                 self.place = "NORTH"
             adventure = Overworld(self.screen, self.screen_width, self.screen_height)
             adventurer = OverworldUnit(self.screen_height, self.screen_height)
-            adventurer.start()
+            pos = adventurer.start()
             adventure.load_character()
+            adventure.screen_jump(pos)
+            adventure.refresh()
             while self.state == "OVERWORLD":
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:

@@ -29,7 +29,7 @@ class OverworldUnit:
     def start(self):
         self.x = self.screen_width / 2
         self.y = self.screen_height / 2
-
+        return self.x, self.y
     def destination(self, objective):
         if objective == "WEST" and self.x <= 0:
             return True

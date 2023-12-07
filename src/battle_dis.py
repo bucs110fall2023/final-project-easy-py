@@ -46,7 +46,7 @@ class BattleDis:
             self.screen.fill("black")
             pygame.display.flip()
         elif enemy_damage or enemy_damage == 0:
-            enemy_damage_msg = f"{enemy_name} endured damage of {hero_damage}"
+            enemy_damage_msg = f"{enemy_name} endured damage of {enemy_damage}"
             battle_event = font.render(enemy_damage_msg, True, "white")
             self.screen.blit(battle_event, ((10, (self.height / 10))))
             pygame.display.flip()
