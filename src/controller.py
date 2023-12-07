@@ -7,6 +7,7 @@ from src.save_dis import SaveDis
 from src.narration import ScrollingText
 from src.movable import OverworldUnit
 from src.overworld import Overworld
+from src.save_prog import SaveProg
 
 class Controller:
 
@@ -95,8 +96,6 @@ class Controller:
             adventurer.start()
             adventure.load_character()
             while self.state == "OVERWORLD":
-                print(self.place)
-                print(adventurer.destination(self.place))
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_UP:
@@ -134,6 +133,7 @@ class Controller:
                 self.enemy = "Swooper"
             if save_data[self.save]["Progress"] == 2:
                 self.enemy = "Golu-Gross"
+        completion = SaveProg(self.save)
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
@@ -156,6 +156,7 @@ class Controller:
                 pygame.time.wait(5000)
                 self.state = "GAMEOVER"
             elif battle_do.in_battle()["Victory"] == True:
+                completion.save_update()
                 battle_eye.victory()
                 pygame.time.wait(5000)
                 self.state = "STORY"
