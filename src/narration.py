@@ -21,14 +21,18 @@ class ScrollingText:
             self.font = pygame.font.Font(None, int(self.height / 20))
             self.y_pos = self.height
     
-    def scroll(self): # revisit, currently a bust
-        y_pos += 50    
-        for scrolling_line in self.story_lines:
-            msg = self.font.render(scrolling_line, True, "white")
-            self.screen.blit(msg, (10, y_pos))
-            pygame.display.flip()
-            y_pos -= 1
-            self.screen.fill("black")
+    def length(self):
+        return len(self.story_lines)
+    
+    def scroll(self, index): # revisit, currently a bust
+        scrolling_line = self.story_lines[index]
+        msg = self.font.render(scrolling_line, True, "white")
+        self.screen.blit(msg, (10, self.y_pos))
+        pygame.display.flip()
+
+    def refresh(self):
+        pygame.display.flip()
+        self.screen.fill("black")
 
 def test():
     pygame.init()
@@ -37,6 +41,6 @@ def test():
     test = ScrollingText(display, "../assets/story_beginning.txt", width, height)
     test.compile()
     while True:
-        test.scroll()
+        test.scroll(0)
 test()
 
