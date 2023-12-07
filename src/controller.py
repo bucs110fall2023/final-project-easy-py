@@ -57,7 +57,7 @@ class Controller:
                         self.screen.fill("black")
                         self.state = "STORY"
                     if event.key == pygame.K_r:
-                        SaveProg().save_reset
+                        SaveProg().save_reset()
 
         # event loop
 
