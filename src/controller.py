@@ -65,9 +65,9 @@ class Controller:
             if save_data[self.save]["Progress"] == 2:
                 self.file = r"../final-project-easy-py/assets/story_end.txt"
         
-        text = ScrollingText(self.screen, r"../final-project-easy-py/assets/story_end.txt", self.screen_width, self.screen_height)
+        text = ScrollingText(self.screen, self.file, self.screen_width, self.screen_height)
+        text.compile()
         while self.state == "STORY":
-            text.compile()
             text.scroll()
             text.refresh()
             for event in pygame.event.get():
