@@ -46,6 +46,7 @@ class Controller:
                         self.save = saving.selection("2")
                     if event.key == pygame.K_3:
                         self.save = saving.selection("3")
+                    self.screen.fill("black")
                     self.state = "STORY"
         # event loop
 
@@ -56,7 +57,7 @@ class Controller:
     def story_loop(self):
         
         while self.state == "STORY":
-            pass
+            self.state = "BATTLE"
             
     
     def overworld_game_loop(self):

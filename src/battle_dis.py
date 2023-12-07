@@ -18,6 +18,7 @@ class BattleDis:
         args: self, hp
         return: object
         """
+        self.screen.fill("black")
         font = pygame.font.Font(None, int(self.height / 10))
         stats_msg = f"Merant: hp {hp}"
         player_hp = font.render(stats_msg, True, "white")
