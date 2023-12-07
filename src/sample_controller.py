@@ -40,11 +40,11 @@ class Controller:
             saving_view.save_display()
             for event in pygame.event.get:
                 if event.type == pygame.KEYDOWN:
-                    if event.type == pygame.K_1:
+                    if event.key == pygame.K_1:
                         self.save = saving.selection("1")
-                    if event.tyoe == pygame.K_2:
+                    if event.key == pygame.K_2:
                         self.save = saving.selection("2")
-                    if event.type == pygame.K_3:
+                    if event.key == pygame.K_3:
                         self.save = saving.selection("3")
                     self.state = "STORY"
         # event loop
@@ -83,16 +83,17 @@ class Controller:
                 battle_eye.battle_screen(battle_do.get_hp())
                 pygame.display.flip()
                 for event in pygame.event.get():
-                    if event.type == pygame.KEYDOWN:
-                        self.screen.fill("black")
-                        battle_eye.battle_screen(battle_do.get_hp())
-                        battle_info = battle_do.in_battle("1")
-                        battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
-                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
-                    elif event.type == pygame.MOUSEBUTTONDOWN:
-                        print("2")
-                        battle_info = battle_do.in_battle("2")
-                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+                    if event.type == pygame.KEYDOWN: # ADD README WAIT
+                        if event.key == pygame.K_1:
+                            self.screen.fill("black")
+                            battle_eye.battle_screen(battle_do.get_hp())
+                            battle_info = battle_do.in_battle("1")
+                            battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
+                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+                        elif event.key == pygame.K_2:
+                            print("2")
+                            battle_info = battle_do.in_battle("2")
+                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
             elif battle_do.in_battle()["Victory"] == False:
                 battle_eye.loss()
                 pygame.time.wait(5000)
