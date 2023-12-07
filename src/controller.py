@@ -95,27 +95,28 @@ class Controller:
             adventurer.start()
             adventure.load_character()
             while self.state == "OVERWORLD":
-                while not adventurer.destination(self.place):
-                    for event in pygame.event.get():
-                        if event.type == pygame.KEYDOWN:
-                            if event.key == pygame.K_UP:
-                                pos = adventurer.move("UP")
-                                adventure.screen_jump(pos)
-                                adventure.refresh()
-                            if event.key == pygame.K_DOWN:
-                                pos = adventurer.move("DOWN")
-                                adventure.screen_jump(pos)
-                                adventure.refresh()
-                            if event.key == pygame.K_LEFT:
-                                pos = adventurer.move("LEFT")
-                                adventure.screen_jump(pos)
-                                adventure.refresh()
-                            if event.key == pygame.K_RIGHT:
-                                pos = adventurer.move("RIGHT")
-                                adventure.screen_jump(pos)
-                                adventure.refresh()
-                if adventurer.destination(self.place):
-                    self.state == "BATTLE"
+                print(self.place)
+                print(adventurer.destination(self.place))
+                for event in pygame.event.get():
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_UP:
+                            pos = adventurer.move("UP")
+                            adventure.screen_jump(pos)
+                            adventure.refresh()
+                        if event.key == pygame.K_DOWN:
+                            pos = adventurer.move("DOWN")
+                            adventure.screen_jump(pos)
+                            adventure.refresh()
+                        if event.key == pygame.K_LEFT:
+                            pos = adventurer.move("LEFT")
+                            adventure.screen_jump(pos)
+                            adventure.refresh()
+                        if event.key == pygame.K_RIGHT:
+                            pos = adventurer.move("RIGHT")
+                            adventure.screen_jump(pos)
+                            adventure.refresh()
+                        if adventurer.destination(self.place):
+                            self.state == "BATTLE"
 
         
         # event loop

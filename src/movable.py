@@ -17,13 +17,13 @@ class OverworldUnit:
         return: None
         """
         if input == "UP":
-            self.y -= 20
+            self.y -= 40
         elif input == "DOWN":
-            self.y += 20
+            self.y += 40
         elif input == "RIGHT":
-            self.x += 20
+            self.x += 40
         elif input == "LEFT":
-            self.x -= 20
+            self.x -= 40
         return self.x, self.y
 
     def start(self):
@@ -31,9 +31,9 @@ class OverworldUnit:
         self.y = self.screen_height / 2
 
     def destination(self, objective):
-        if objective == "WEST" and self.x == 0:
+        if objective == "WEST" and self.x <= 0:
             return True
-        if objective == "SOUTH" and self.y == self.screen_height:
+        if objective == "SOUTH" and self.y >= self.screen_height:
             return True
-        if objective == "NORTH" and self.y == 0:
+        if objective == "NORTH" and self.y <= 0:
             return True
