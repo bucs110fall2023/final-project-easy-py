@@ -19,10 +19,10 @@ class OverworldUnit:
         return: None
         """
         if input == "UP":
-            self.y += 30
+            self.y += 1
         elif input == "DOWN":
-            self.y -= 30
+            self.y -= 1
         elif input == "RIGHT":
-            self.x += 30
+            self.x += 1
         elif input == "LEFT":
-            self.x -= 30
+            self.x -= 1
