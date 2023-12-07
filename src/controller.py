@@ -12,7 +12,11 @@ from src.save_prog import SaveProg
 class Controller:
 
     def __init__(self):
-        # setup pygame data
+        """
+        Initializes the information necessary for pygame to run
+        args: self
+        return: None
+        """
         pygame.init()
         self.screen = pygame.display.set_mode()
         self.screen_width, self.screen_height = self.screen.get_size()
@@ -20,7 +24,11 @@ class Controller:
 
 
     def main_loop(self):
-        # select state loop
+        """
+        Selects a screenloop for the game
+        args: self
+        return: None
+        """
         while True:
             if self.state == "SELECTION":
                 self.selection_loop()
@@ -37,7 +45,11 @@ class Controller:
       ### below are some sample loop states ###
 
     def selection_loop(self):
-        
+        """
+        Selects a save file as well as allowing the player to reset their data
+        args: self
+        return: None
+        """
         saving = SaveSelec()
         saving_view = SaveDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "SELECTION":
@@ -66,7 +78,11 @@ class Controller:
         # redraw
 
     def story_loop(self):
-        
+        """
+        Selects a line to scroll and guides the player on where to go
+        args: self
+        return: None
+        """
         with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
             save_data = json.load(phew)
             if save_data[self.save]["Progress"] == 0:
@@ -94,6 +110,11 @@ class Controller:
             
     
     def overworld_game_loop(self):
+        """
+        Allows the player to travel on an overworld and reach a designated destination
+        args: self
+        return: None
+        """
         with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
             save_data = json.load(phew)
             if save_data[self.save]["Progress"] == 0:
@@ -138,6 +159,10 @@ class Controller:
         # redraw
 
     def battle_gameloop(self):
+        """
+        Allows the player to battle other enemies
+        args: self
+        return: None"""
         with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
             save_data = json.load(phew)
             if save_data[self.save]["Progress"] == 0:
@@ -175,6 +200,11 @@ class Controller:
                 self.state = "STORY"
 
     def gameover_loop(self):
+        """
+        Quits the game
+        args: self
+        return: None
+        """
         pygame.quit()
         exit()
         # event loop
