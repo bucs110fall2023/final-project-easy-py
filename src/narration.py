@@ -14,15 +14,23 @@ class ScrollingText:
         self.width = width
 
     def compile(self):
+        """
+        Compiles the text to be displayed on screen
+        args: self
+        return: None
+        """
         with open(self.file, "r") as text:
             self.story_line = text.read()
             self.font = pygame.font.Font(None, int(self.height / 20))
             self.y_pos = self.height
     
-    def length(self):
-        return len(self.story_lines)
     
     def scroll(self): # revisit, currently a bust
+        """
+        Scroll a line of text on the screen
+        args: self
+        return: boolean
+        """
         if self.y_pos >= 0:    
             scrolling_line = self.story_line
             msg = self.font.render(scrolling_line, True, "white")
@@ -31,18 +39,10 @@ class ScrollingText:
             return True
 
     def refresh(self):
+        """
+        Refreshes the screen
+        args: self
+        return: None
+        """
         pygame.display.flip()
         self.screen.fill("black")
-
-def test():
-    pygame.init()
-    display = pygame.display.set_mode()
-    width, height = pygame.display.get_window_size()
-    test = ScrollingText(display, "../assets/story_beginning.txt", width, height)
-    test.compile()
-    while True:
-        while test.scroll() == True:
-            test.scroll()
-            test.refresh()
-#test()
-

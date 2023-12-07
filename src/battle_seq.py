@@ -24,7 +24,7 @@ class BattleSeq:
         """
         Follows the events of a battle (the main part of the game)
         args: self input
-        return: None
+        return: dictionary, boolean
         """
         if input == "1":
             player_info = self.merant.attack(self.enemy)

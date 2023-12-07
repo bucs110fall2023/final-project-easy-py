@@ -14,22 +14,26 @@ class Overworld:
 
 
     def load_character(self):
+        """
+        Loads the image of the player character
+        args: self
+        return: None
+        """
         self.hero = pygame.image.load(r"../final-project-easy-py/assets/Hero.png")
 
     def screen_jump(self, coordinates):
+        """
+        Displays the player character on screen
+        args: self, coordinates
+        return: None
+        """
         self.screen.blit(self.hero, coordinates)
 
     def refresh(self):
+        """
+        Refreshes the screen
+        args: self
+        return: None
+        """        
         pygame.display.flip()
         self.screen.fill("black")
-
-def test():
-    pygame.init()
-    display = pygame.display.set_mode()
-    width, height = pygame.display.get_window_size()
-    explorer = Overworld(display, width, height)
-    explorer.load_character()
-    while True:
-        explorer.screen_jump(500, 500)
-        explorer.refresh()
-# test()

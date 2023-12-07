@@ -1,8 +1,6 @@
 
 class SaveSelec:
 
-    def __init__(self):
-        pass
 
     def selection(self, input):
         """

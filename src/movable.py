@@ -4,7 +4,7 @@ class OverworldUnit:
     def __init__(self, screen_width, screen_height):
         """
         Initializes the information the player unit in the overworld
-        args: self, x, y, length, width
+        args: self, screen_width, screen_height
         return: None
         """
         self.screen_width = screen_width
@@ -14,7 +14,7 @@ class OverworldUnit:
         """
         Allows the player unit to move in the overworld
         args: self, input
-        return: None
+        return: tuple
         """
         if input == "UP":
             self.y -= 40
@@ -27,10 +27,21 @@ class OverworldUnit:
         return self.x, self.y
 
     def start(self):
+        """
+        Places the player character at the center of the screen
+        args: self
+        return: tuple
+        """
         self.x = self.screen_width / 2
         self.y = self.screen_height / 2
         return self.x, self.y
+    
     def destination(self, objective):
+        """
+        Checks if the player has reached their destination
+        args: self, objective
+        return: boolean
+        """
         if objective == "WEST" and self.x <= 0:
             return True
         if objective == "SOUTH" and self.y >= self.screen_height:

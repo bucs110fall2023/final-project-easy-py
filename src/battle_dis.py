@@ -55,6 +55,11 @@ class BattleDis:
             pygame.display.flip()
 
     def victory(self):
+        """
+        Displays that the player won
+        args: self
+        return: None
+        """
         font = pygame.font.Font(None, int(self.height / 10))
         declaration = f"Merant Wins!"
         battle_event = font.render(declaration, True, "white")
@@ -65,6 +70,11 @@ class BattleDis:
         pygame.display.flip()
 
     def loss(self):
+        """
+        Displays that the player lost
+        args: self
+        return: None
+        """
         font = pygame.font.Font(None, int(self.height / 10))
         declaration = f"Merant Loses."
         battle_event = font.render(declaration, True, "white")

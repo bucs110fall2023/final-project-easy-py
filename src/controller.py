@@ -46,12 +46,19 @@ class Controller:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_1:
                         self.save = saving.selection("1")
+                        self.screen.fill("black")
+                        self.state = "STORY"
                     if event.key == pygame.K_2:
                         self.save = saving.selection("2")
+                        self.screen.fill("black")
+                        self.state = "STORY"    
                     if event.key == pygame.K_3:
                         self.save = saving.selection("3")
-                    self.screen.fill("black")
-                    self.state = "STORY"
+                        self.screen.fill("black")
+                        self.state = "STORY"
+                    if event.key == pygame.K_r:
+                        SaveProg().save_reset
+
         # event loop
 
         # update data
