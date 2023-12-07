@@ -56,12 +56,27 @@ class Controller:
 
     def story_loop(self):
         
+        with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
+            save_data = json.load(phew)
+            if save_data[self.save]["Progress"] == 0:
+                self.file = r"../final-project-easy-py/assets/story_beginning.txt"
+            if save_data[self.save]["Progress"] == 1:
+                self.file = r"../final-project-easy-py/assets/story_middle.txt"
+            if save_data[self.save]["Progress"] == 2:
+                self.file = r"../final-project-easy-py/assets/story_end.txt"
+        
+        test = ScrollingText(self.screen, self.file, self.screen_width, self.screen_height)
         while self.state == "STORY":
-            self.state = "BATTLE"
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.state = "OVERWORLD"
+            
+            
             
     
     def overworld_game_loop(self):
-        pass
+        self.state == "BATTLE"
         # event loop
 
         # update data
