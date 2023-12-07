@@ -38,7 +38,7 @@ class Controller:
         saving_view = SaveDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "SELECTION":
             saving_view.save_display()
-            for event in pygame.event.get:
+            for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_1:
                         self.save = saving.selection("1")
