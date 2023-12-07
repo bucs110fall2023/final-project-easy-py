@@ -33,10 +33,14 @@ class ScrollingText:
         """
         if self.y_pos >= 0:    
             scrolling_line = self.story_line
-            msg = self.font.render(scrolling_line, True, "white")
-            self.screen.blit(msg, (10, self.y_pos))
+            self.msg = self.font.render(scrolling_line, True, "white")
+            self.screen.blit(self.msg, (10, self.y_pos))
             self.y_pos -= 1
             return True
+        if self.y_pos <= 0:
+            self.screen.blit(self.msg, (10, (self.y_pos)))
+            return False
+
 
     def refresh(self):
         """

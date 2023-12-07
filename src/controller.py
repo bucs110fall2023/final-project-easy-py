@@ -103,7 +103,7 @@ class Controller:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE and save_data[self.save]["Progress"] < 3:
                         self.state = "OVERWORLD"
-                    else:
+                    elif event.key == pygame.K_ESCAPE:
                         self.state = "GAMEOVER"
             
             
