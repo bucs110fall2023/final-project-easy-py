@@ -1,16 +1,12 @@
 
 class OverworldUnit:
 
-    def __init__(self, x, y, width, height, screen_width, screen_height):
+    def __init__(self, screen_width, screen_height):
         """
         Initializes the information the player unit in the overworld
         args: self, x, y, length, width
         return: None
         """
-        self.x = x
-        self.y = y
-        self.height = height # proportion of screen
-        self.width = width # proportion of screen 
         self.screen_width = screen_width
         self.screen_height = screen_height
 
@@ -28,15 +24,16 @@ class OverworldUnit:
             self.x += 1 / self.screen_width
         elif input == "LEFT":
             self.x -= 1 / self.screen_width
+        return self.x, self.y
 
     def start(self):
-        self.x = self.width / 2
-        self.y = self.height / 2
+        self.x = self.screen_width / 2
+        self.y = self.screen_height / 2
 
     def destination(self, objective):
         if objective == "WEST" and self.x == 0:
             return True
-        if objective == "SOUTH" and self.y == self.height:
+        if objective == "SOUTH" and self.y == self.screen_height:
             return True
         if objective == "NORTH" and self.y == 0:
             return True

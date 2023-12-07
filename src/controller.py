@@ -1,10 +1,13 @@
 import pygame
 import json
-from src.battle_seq import Hero, Enemy, BattleSeq
+from src.battle_seq import BattleSeq
 from src.battle_dis import BattleDis
 from src.save_selec import SaveSelec
 from src.save_dis import SaveDis
 from src.narration import ScrollingText
+from src.movable import OverworldUnit
+from src.overworld import Overworld
+
 class Controller:
 
     def __init__(self):
@@ -79,7 +82,42 @@ class Controller:
             
     
     def overworld_game_loop(self):
-        self.state == "BATTLE"
+        with open(r"../final-project-easy-py/assets/save_data.json", "r") as phew:
+            save_data = json.load(phew)
+            if save_data[self.save]["Progress"] == 0:
+                self.place = "WEST"
+            if save_data[self.save]["Progress"] == 1:
+                self.place = "SOUTH"
+            if save_data[self.save]["Progress"] == 2:
+                self.place = "NORTH"
+            adventure = Overworld(self.screen, self.screen_width, self.screen_height)
+            adventurer = OverworldUnit(self.screen_height, self.screen_height)
+            adventurer.start()
+            adventure.load_character()
+            while self.state == "OVERWORLD":
+                while not adventurer.destination(self.place):
+                    for event in pygame.event.get():
+                        if event.type == pygame.KEYDOWN:
+                            if event.key == pygame.K_UP:
+                                pos = adventurer.move("UP")
+                                adventure.screen_jump(pos)
+                                adventure.refresh()
+                            if event.key == pygame.K_DOWN:
+                                pos = adventurer.move("DOWN")
+                                adventure.screen_jump(pos)
+                                adventure.refresh()
+                            if event.key == pygame.K_LEFT:
+                                pos = adventurer.move("LEFT")
+                                adventure.screen_jump(pos)
+                                adventure.refresh()
+                            if event.key == pygame.K_RIGHT:
+                                pos = adventurer.move("RIGHT")
+                                adventure.screen_jump(pos)
+                                adventure.refresh()
+                if adventurer.destination(self.place):
+                    self.state == "BATTLE"
+
+        
         # event loop
 
         # update data
