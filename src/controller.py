@@ -110,7 +110,6 @@ class Controller:
                             battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
                             battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
                         elif event.key == pygame.K_2:
-                            print("2")
                             battle_info = battle_do.in_battle("2")
                             battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
             elif battle_do.in_battle()["Victory"] == False:
