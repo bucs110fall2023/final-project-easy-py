@@ -22,7 +22,7 @@ class BattleDis:
         stats_msg = f"Merant: hp {hp}"
         player_hp = font.render(stats_msg, True, "white")
         self.screen.blit(player_hp, ((10, (self.height - (self.height / 10)))))
-        sndstats_msg = "Press 1 to attack, 2 to rest"
+        sndstats_msg = "Press a key to attack, the mouse to rest"
         request = font.render(sndstats_msg, True, "white")
         self.screen.blit(request, ((10, (self.height - (self.height / 3)))))
         return self.screen

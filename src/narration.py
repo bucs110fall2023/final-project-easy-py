@@ -35,5 +35,5 @@ def test():
     width, height = pygame.display.get_window_size()
     test = ScrollingText(display, "../assets/story_beginning.txt", width, height)
     test.scroll()
-test()
+#test()
 

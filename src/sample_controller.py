@@ -76,7 +76,6 @@ class Controller:
                 self.enemy = "Swooper"
             if save_data[self.save]["Progress"] == 2:
                 self.enemy = "Golu-Gross"
-            print(self.enemy)
         battle_do = BattleSeq(self.save, self.enemy)
         battle_eye = BattleDis(self.screen, self.screen_width, self.screen_height)
         while self.state == "BATTLE":
@@ -85,15 +84,15 @@ class Controller:
                 pygame.display.flip()
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
-                        if event.type == pygame.K_1 or event.type == 768:
-                            print("1")
-                            battle_eye.battle_screen(battle_do.get_hp())
-                            battle_info = battle_do.in_battle("1")
-                            battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
-                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
-                        elif event.type == pygame.K_2:
-                            battle_info = battle_do.in_battle("2")
-                            battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+                        self.screen.fill("black")
+                        battle_eye.battle_screen(battle_do.get_hp())
+                        battle_info = battle_do.in_battle("1")
+                        battle_eye.battle_dialogue(battle_do.get_hp(), None, battle_info["Player Narration"]["Enemy Damage"], battle_info["Player Narration"]["Opponent"])
+                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
+                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                        print("2")
+                        battle_info = battle_do.in_battle("2")
+                        battle_eye.battle_dialogue(battle_do.get_hp(), battle_info["Enemy Narration"]["Enemy Damage"])
             elif battle_do.in_battle()["Victory"] == False:
                 battle_eye.loss()
                 pygame.time.wait(5000)
