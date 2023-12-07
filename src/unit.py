@@ -39,7 +39,7 @@ class Unit:
         args: self
         return: dictionary
         """
-        heal = 5
+        heal = 10
         self.hp += heal
         return {"Unit": self.name, "Recovered hp": self.heal}
 
