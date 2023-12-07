@@ -16,8 +16,8 @@ class Overworld:
     def load_character(self):
         self.hero = pygame.image.load(r"../final-project-easy-py/assets/Hero.png")
 
-    def screen_jump(self, x, y):
-        self.screen.blit(self.hero, (x, y))
+    def screen_jump(self, coordinates):
+        self.screen.blit(self.hero, coordinates)
 
     def refresh(self):
         pygame.display.flip()

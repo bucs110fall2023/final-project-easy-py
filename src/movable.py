@@ -17,13 +17,13 @@ class OverworldUnit:
         return: None
         """
         if input == "UP":
-            self.y += 1 / self.screen_height
+            self.y += 10
         elif input == "DOWN":
-            self.y -= 1 / self.screen_height
+            self.y -= 10
         elif input == "RIGHT":
-            self.x += 1 / self.screen_width
+            self.x += 10
         elif input == "LEFT":
-            self.x -= 1 / self.screen_width
+            self.x -= 10
         return self.x, self.y
 
     def start(self):
