@@ -2,7 +2,7 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
 #  Easy-py 
-## CS110 Final Project   fall, 2023 
+## CS110 Final Project fall semester, 2023 
 
 ## Team Members
 
@@ -24,7 +24,9 @@ An rpg with stats attack options, and a modicum of plot
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+![final gui](assets/finalgui1.jpg)
+![final gui](assets/finalgui2.jpg)
+![final gui](assets/finalgui3.jpg)
 
 ## Program Design
 
@@ -40,7 +42,17 @@ An rpg with stats attack options, and a modicum of plot
 
 - Unit: Template for the Hero and Enemy class. Holds the stats for the RPG unit and can attact another unit.
 - Hero: Inherites from Unit can accumulate Exp for a level up and when hp reaches zero a boolean is returned for a game over.
-- Enemy: Inherites from Unit and holds an Exp value and when hp reaches zero a boolean is returned for vicotry.
+- Enemy: Inherites from Unit and holds an Exp value and when hp reaches zero a boolean is returned for victory.
+- BattleDis: Displays the information for the battle sequence
+- BattleSeq: Processes the data for player action during a battle
+- Controller: main hub for the game and selects pygame screens
+- HealthBar: displays the health bar for the player (DEPRECATED)
+- OverworldUnit: processes the data for the player in the overworld
+- Narration: displays a line of text scrolling upwards from a file
+- Overworld: displays the overworld and the player
+- SaveDis: displays the save selection options for the player
+- SaveSelec: processes the player's selection of save file
+- SaveProg: Updates the save data based on player progression
 
 ## ATP
 
