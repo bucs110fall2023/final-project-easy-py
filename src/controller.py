@@ -42,7 +42,6 @@ class Controller:
                 self.gameover_loop()
 
 
-      ### below are some sample loop states ###
 
     def selection_loop(self):
         """
@@ -71,11 +70,6 @@ class Controller:
                     if event.key == pygame.K_r:
                         SaveProg().save_reset()
 
-        # event loop
-
-        # update data
-
-        # redraw
 
     def story_loop(self):
         """
@@ -152,11 +146,6 @@ class Controller:
                             self.state = "BATTLE"
 
         
-        # event loop
-
-        # update data
-
-        # redraw
 
     def battle_gameloop(self):
         """
@@ -207,8 +196,3 @@ class Controller:
         """
         pygame.quit()
         exit()
-        # event loop
-
-        # update data
-
-        # redraw
