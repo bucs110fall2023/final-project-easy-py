@@ -21,7 +21,7 @@ class ScrollingText:
         """
         with open(self.file, "r") as text:
             self.story_line = text.read()
-            self.font = pygame.font.Font(None, int(self.height / 20))
+            self.font = pygame.font.Font(None, int(self.height / 25))
             self.y_pos = self.height
     
     
