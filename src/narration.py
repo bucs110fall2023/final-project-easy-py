@@ -25,7 +25,7 @@ class ScrollingText:
             self.y_pos = self.height
     
     
-    def scroll(self): # revisit, currently a bust
+    def scroll(self):
         """
         Scroll a line of text on the screen
         args: self
