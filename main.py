@@ -3,7 +3,6 @@ from src.controller import Controller
 #import your controller
 
 def main():
-    pygame.init()
     #Create an instance on your controller object
     #Call your mainloop
     merants_venture = Controller()
