@@ -40,22 +40,23 @@ An rpg with stats attack options, and a modicum of plot
 
 ### Classes
 
-Models:
-    - Unit: Template for the Hero and Enemy class. Holds the stats for the RPG unit and can attact another unit.
-    - Hero: Inherites from Unit can accumulate Exp for a level up and when hp reaches zero a boolean is returned for a game over.
-    - Enemy: Inherites from Unit and holds an Exp value and when hp reaches zero a boolean is returned for victory.
-    - BattleSeq: Processes the data for player action during a battle
-    - SaveSelec: processes the player's selection of save file
-    - SaveProg: Updates the save data based on player progression
-    - OverworldUnit: processes the data for the player in the overworld
-View:    
-    - BattleDis: Displays the information for the battle sequence
-    - HealthBar: displays the health bar for the player (DEPRECATED)
-    - Narration: displays a line of text scrolling upwards from a file
-    - Overworld: displays the overworld and the player
-    - SaveDis: displays the save selection options for the player
-Controller:
-    - Controller: main hub for the game and selects pygame screens
+Models, View, Controller
+- Models
+- Unit: Template for the Hero and Enemy class. Holds the stats for the RPG unit and can attact another unit.
+- Hero: Inherites from Unit can accumulate Exp for a level up and when hp reaches zero a boolean is returned for a game over.
+- Enemy: Inherites from Unit and holds an Exp value and when hp reaches zero a boolean is returned for victory.
+- BattleSeq: Processes the data for player action during a battle
+- SaveSelec: processes the player's selection of save file
+- SaveProg: Updates the save data based on player progression
+- OverworldUnit: processes the data for the player in the overworld 
+- View
+- BattleDis: Displays the information for the battle sequence
+- HealthBar: displays the health bar for the player (DEPRECATED)
+- Narration: displays a line of text scrolling upwards from a file
+- Overworld: displays the overworld and the player
+- SaveDis: displays the save selection options for the player
+- Controller
+- Controller: main hub for the game and selects pygame screens
 
 ## ATP
 
